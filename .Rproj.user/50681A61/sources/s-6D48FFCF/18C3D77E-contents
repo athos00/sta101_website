@@ -1,0 +1,79 @@
+library(tidyverse)
+
+mu0 = 0
+sd0 = 1
+
+shadeFrom = 1.75
+shadeLeft = shadeFrom - 0.0125
+
+max0 = dnorm(0, mean = mu0, sd = sd0)
+hmax0 = 0.5*max0
+x_fwhm = sqrt(-2*log(hmax0*sqrt(2*pi)))
+slope0 = 0.11
+
+dnorm_limit <- function(x) {
+  y <- dnorm(x)
+  y[x < shadeLeft  |  x > 3] <- NA
+  return(y)
+}
+
+
+shift_d_norm = function(x, mean, sd) {
+  d = dnorm(mean, sd)
+  shift = (2.1 * slope0)
+  return(shift + d)
+}
+
+ggplot(data = data.frame(x = c(-3, 3)), aes(x)) +
+  stat_function(fun = dnorm, n = 101, args = list(mean = mu0, sd = sd0)) +
+  geom_segment(x = shadeFrom, y = 0, xend = shadeFrom, yend = dnorm(shadeFrom, mu0, sd0)) +
+  stat_function(fun = dnorm_limit, geom = "area", fill = "black", alpha = 1) +
+  geom_segment(x = x_fwhm, y = hmax0, xend = -1*x_fwhm, yend = hmax0) +
+  labs(x = "", y = "") +
+  scale_y_continuous(breaks = NULL) +
+  scale_x_continuous(breaks = NULL) +
+  theme_minimal() +
+  theme(axis.text.x=element_blank(), #remove x axis labels
+        axis.ticks.x=element_blank()
+  ) #+
+  # geom_abline(slope = slope0, intercept = 0) +
+  # stat_function(fun = shift_d_norm, n = 101, args = list(mean = mu0, sd = sd0))
+
+# x = c(1, 2, 3, 4, 4, 4, 4, 3, 2, 1, 1, 1, 2, 3, 4, 1, 1, 4, 4,#S
+#       8, 8, 8, 8, 8, 8, 6, 7, 9, 10, 8, 8, 8, 8, #T
+#       12, 12, 12, 12, 12, 14, 14, 16, 16, 16, 16, 16, 12, 12, 12, 12, 16, 16, 16, 16#A
+#       ) 
+# y = c(1, 1, 1, 1, 2, 3, 3, 3, 3, 3, 4, 5, 5, 5, 5, 4.5, 3.5, 1.5, 2.5, #S
+#       1, 2, 3, 4, 5, 5, 5, 5, 5, 5, 1.5, 2.5, 3.5, 4.5, #T
+#       1, 2, 3, 4, 5, 3, 5, 1, 2, 3, 4, 5, 1.5, 2.5, 3.5, 4.5, 1.5, 2.5, 3.5, 4.5
+#       )
+# 
+# 
+# slope0 = 3.8/16
+# intercept0 = 1
+# 
+# line_function = function(x) {
+#   return(x*slope0 + intercept0)
+# }
+
+# set.seed(4)
+# # sta101 = data.frame(rep(x, 2), rep(y,2))
+# sta101 = data.frame(x, y) %>%
+#   mutate(
+#     color = as.factor(ifelse(line_function(x) < y, 0, 1))
+#   )
+# 
+# color_p = c("#FFFFFF", "#D3D3D3")
+# # x2 = rep(x, 2)
+# # y2 = rep(y, 2)
+# # sta101 = data.frame(x = x2, y = y2)
+# sta101 %>%
+#   ggplot(aes(x = x, y = y, color = color)) +
+#   geom_point(size = 4) +
+#   #geom_jitter(width = 0.1, height = 0.1, size = 4) +
+#   geom_abline(slope = slope0, intercept = intercept0, color = 'red') +
+#   theme_minimal() +
+#   theme(panel.background = element_rect(fill = 'black', colour = 'black')) +
+#   scale_color_manual(values=c('#FFFFFF','steelblue')) +
+#   scale_y_continuous(breaks = NULL) +
+#   scale_x_continuous(breaks = NULL)

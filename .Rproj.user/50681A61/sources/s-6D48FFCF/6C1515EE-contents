@@ -1,0 +1,17 @@
+---
+title: "sta101-examples"
+output: html_document
+---
+
+```{r load-general-libraries}
+library(tidyverse)
+```
+
+```{r data-libraries}
+library(BGLR)
+```
+
+```{r look-at-data}
+wheat.sets
+```
+

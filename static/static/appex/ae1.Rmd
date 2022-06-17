@@ -1,0 +1,18 @@
+---
+title: "Untitled"
+output: html_document
+date: '2022-06-17'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# AE 1
+
+This is a test for application exercise 1
+
+```{r}
+plot(cars)
+```
+

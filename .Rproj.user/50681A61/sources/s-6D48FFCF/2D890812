@@ -1,0 +1,26 @@
+{
+    "id": "2D890812",
+    "path": "~/Desktop/teaching/sta101/themes/hermit/exampleSite/config.toml",
+    "project_path": "themes/hermit/exampleSite/config.toml",
+    "type": "toml",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1655302884670.0,
+    "source_on_save": false,
+    "relative_order": 6,
+    "properties": {
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "36,23",
+        "scrollLine": "24"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1655305639,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1655305639373,
+    "read_only": false,
+    "read_only_alternatives": []
+}
