@@ -44,9 +44,6 @@
     <loc>https://example.com/posts/creating-a-new-theme/</loc>
     <lastmod>2014-09-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/about-hugo/</loc>
-    <lastmod>2014-04-09T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://example.com/posts/goisforlovers/</loc>
     <lastmod>2014-04-02T00:00:00+00:00</lastmod>
   </url><url>
@@ -74,12 +71,10 @@
     <loc>https://example.com/posts/migrate-from-jekyll/</loc>
     <lastmod>2014-03-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://example.com/calendar/</loc>
-  </url><url>
-    <loc>https://example.com/calendar/calendar/</loc>
-  </url><url>
-    <loc>https://example.com/schedule/</loc>
+    <loc>https://example.com/office-hours/</loc>
   </url><url>
     <loc>https://example.com/schedule/schedule/</loc>
+  </url><url>
+    <loc>https://example.com/schedule/</loc>
   </url>
 </urlset>

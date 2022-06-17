@@ -42,14 +42,14 @@ params:
   
 menu:
   main:
-    - name: calendar
-      url: calendar/calendar
+    - name: schedule
+      url: schedule/schedule
       weight: 10
     - name: syllabus
       url: posts/
       weight: 20
     - name: office hours
-      url: about-hugo/
+      url: office-hours/
       weight: 30
     - name: tutorials
       url: about-hugo/

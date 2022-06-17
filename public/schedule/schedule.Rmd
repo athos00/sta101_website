@@ -19,13 +19,10 @@ library(knitr)
 firstDay = as.Date("2022-06-27")
 firstDayID = "Mon"
 lastDay = as.Date("2022-08-04")
-
 lectureDays = c("Mon", "Tue", "Thu")
 labDays = c("Tue", "Thu")
 holidays = as.Date(c("2022-07-04"))
-
 ### render table
-
 allDates = seq(from = firstDay, to = lastDay, by = 'day')
 schedule = data.frame(allDates,
                         dayOfWeek = weekdays(allDates, abbreviate=T)) %>%
@@ -42,8 +39,6 @@ schedule = schedule %>%
   mutate(Exam = rep("", nrow(schedule))) %>%
   mutate(Project = rep("", nrow(schedule))) %>%
   select(Week, Date, Topic, Prepare, AE, Assignment, Exam, Project)
-
-
 # to be pasted into console then pasted into markdown:
 schedule %>%
   kable(format = "markdown")
