@@ -52,5 +52,5 @@ menu:
       url: office-hours/
       weight: 30
     - name: tutorials
-      url: about-hugo/
+      url: tutorials/
       weight: 40

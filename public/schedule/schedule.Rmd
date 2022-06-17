@@ -2,7 +2,8 @@
 title: "Schedule"
 date: "Summer 2022"
 output:
-  html_document: default
+  html_document: 
+    css: "custom-site.css"
 ---
 
 ```{r setup, include=FALSE}

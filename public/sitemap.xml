@@ -76,5 +76,7 @@
     <loc>https://example.com/schedule/schedule/</loc>
   </url><url>
     <loc>https://example.com/schedule/</loc>
+  </url><url>
+    <loc>https://example.com/tutorials/</loc>
   </url>
 </urlset>
