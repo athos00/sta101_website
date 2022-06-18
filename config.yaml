@@ -42,8 +42,11 @@ params:
   
 menu:
   main:
+    # - name: schedule
+    #   url: static/schedule/schedule.html
+    #   weight: 10
     - name: schedule
-      url: static/schedule/schedule.html
+      url: /schedule/schedule
       weight: 10
     - name: syllabus
       url: /syllabus

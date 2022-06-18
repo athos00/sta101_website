@@ -1,33 +1,106 @@
-body {
-    font-family: 'Muli';
-    font-size: 19px;
+// Colors
+//
+$theme: #018574;
+$text: #e8eef2;
+$light-grey: #000000;
+$dark-grey: #3B3E48;
+$highlight-grey: #7d828a;
+$midnightblue: #2c3e50;
+
+html {
+  background: $light-grey;
 }
 
-<style>
-  .flat-table {
-    display: block;
-    font-family: sans-serif;
-    -webkit-font-smoothing: antialiased;
-    font-size: 115%;
-    overflow: auto;
-    width: auto;
-  }
-  thead {
-    background-color: rgb(112, 196, 105);
-    color: white;
-    font-weight: normal;
-    padding: 20px 30px;
-    text-align: center;
-  }
-  tbody {
-    background-color: rgb(238, 238, 238);
-    color: rgb(111, 111, 111);
-    padding: 20px 30px;
-  }
-</style>
+/*
+body {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+	background-color: #fefefe;
+	color: #222;
+	counter-reset: li;
+	font-size: 16px;
+}
+
+background-color: #000000
+
+table th {
+         background-color: #000000
+        /* sets table header cell background colour */
+    }
+   
+/*
+table tbody {
+  background-color: #000000
+}
+
+h1.title {
+	font-weight: 700;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #00539B;
+}
+
+h1 {
+	font-style: normal;
+	font-family: 'Source Sans Pro', sans-serif;
+	color: #00539B;
+}
+
+h2 {
+	font-style: normal;
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+	color: #00539B;
+}
+
+h3.subtitle {
+	font-style: normal;
+	color: #00539B;
+}
+
+h4 {
+	font-style: normal;
+	font-weight: 400;
+	font-family: 'Source Sans Pro', sans-serif;
+	margin-top: 1.5rem;
+	margin-bottom: 0;
+	line-height: 1;
+}
+
+h4.author,
+h4.date {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 350;
+}
+
+.numeral {
+	font-family: "Source Sans Pro";
+	font-weight: 350;
+}
+
+em {
+	font-style: italic;
+	font-weight: 350;
+	font-family: "Source Sans Pro";
+}
+
+strong {
+	font-style: bold;
+	font-weight: 600;
+	font-family: "Source Sans Pro";
+}
+
+a {
+  color: #00b3b3;
+  text-decoration: underline;
+}    
+
+em {
+	color: #FFFFFF
+}
+*/
 
 /* Tables */
-
+/*
 table tbody tr:nth-child(even){
   background-color: {{ .Param "colors.table_row_even" }};
 }
@@ -39,3 +112,4 @@ table tbody tr:nth-child(odd){
 .latest {
   border-top: .5em solid {{ .Param "colors.latest_border" }};
 }
+*/
