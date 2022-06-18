@@ -7,6 +7,13 @@ $dark-grey: #3B3E48;
 $highlight-grey: #7d828a;
 $midnightblue: #2c3e50;
 
+body.dark-mode, 
+body.dark-mode main * {
+    //background: #e8eef2;
+    background: #FFFFFF;
+    color: #000000
+}
+
 // Fonts
 //
 
