@@ -46,7 +46,7 @@ menu:
       url: schedule/schedule
       weight: 10
     - name: syllabus
-      url: posts/
+      url: syllabus/
       weight: 20
     - name: office hours
       url: office-hours/
