@@ -43,14 +43,14 @@ params:
 menu:
   main:
     - name: schedule
-      url: schedule/schedule
+      url: static/schedule/schedule.html
       weight: 10
     - name: syllabus
-      url: syllabus/
+      url: /syllabus
       weight: 20
     - name: office hours
       url: office-hours/
       weight: 30
-    - name: tutorials
-      url: tutorials/
-      weight: 40
+    # - name: tutorials
+    # url: tutorials/
+    # weight: 40

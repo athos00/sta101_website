@@ -1,0 +1,70 @@
+---
+title: "Schedule"
+tbl-colwidths: [5,10,30,5,5,5,5,5]
+output:
+  html_document:
+    css: "./custom-site.css"
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, include = FALSE, eval=F)
+```
+
+```{r load-libraries}
+library(tidyverse)
+library(knitr)
+```
+
+```{r smart-date-setup}
+# set these:
+firstDay = as.Date("2022-06-27")
+firstDayID = "Mon"
+lastDay = as.Date("2022-08-04")
+lectureDays = c("Mon", "Tue", "Thu")
+labDays = c("Tue", "Thu")
+holidays = as.Date(c("2022-07-04"))
+### render table
+allDates = seq(from = firstDay, to = lastDay, by = 'day')
+schedule = data.frame(allDates,
+                        dayOfWeek = weekdays(allDates, abbreviate=T)) %>%
+  filter(dayOfWeek %in% c(lectureDays, labDays))
+schedule = schedule %>%
+  mutate(lab = ifelse(dayOfWeek %in% labDays, TRUE, FALSE)) %>%
+  mutate(Topic = ifelse(allDates %in% holidays, "NO CLASS", "")) %>%
+  mutate(Date = format(allDates, format = "%b %d")) %>%
+  mutate(Date = paste(dayOfWeek, Date)) %>%
+  mutate(Week = rep("", nrow(schedule))) %>%
+  mutate(Prepare = rep("", nrow(schedule))) %>%
+  mutate(AE = rep("", nrow(schedule))) %>%
+  mutate(Assignment = rep("", nrow(schedule))) %>%
+  mutate(Exam = rep("", nrow(schedule))) %>%
+  mutate(Project = rep("", nrow(schedule))) %>%
+  select(Week, Date, Topic, Prepare, AE, Assignment, Exam, Project)
+# to be pasted into console then pasted into markdown:
+schedule %>%
+  kable(format = "markdown")
+```
+
+Summer II, 2022
+
+|Week |Date       |Topic    |Prepare |AE |Lab |Exam |Project |
+|:----|:----------|:--------|:-------|:--|:----------|:----|:-------|
+|   1  |Mon Jun 27 |  Intro to R       |        |[ae01](/static/static/appex/ae1.html)   |           |     |        |
+|  1   |Tue Jun 28 |  Visualization I       |        | | [lab1]()             |     |        |
+|  1   |Thu Jun 30 |  Visualization II       |        | | [lab2]()             |     |        |
+|  2   |Mon Jul 04 |NO CLASS: Independence Day |        |   |           |     |        |
+|  2   |Tue Jul 05 | Simple Linear Regression        |     | | [lab3]()            |     |        |
+|  2   |Thu Jul 07 | Multiple linear regression        |        | | No lab: exam released           |  [exam01]()   |        |
+|  3   |Mon Jul 11 | Multiple linear regression II       |        |   |           |  exam01 due   |        |
+|  3   |Tue Jul 12 | Logistic regression         |        | |  Regression project: workday         |     |        |
+|  3   |Thu Jul 14 | Random variables + distributions      |        | | [lab4]()              |     |        |
+|  4   |Mon Jul 18 | Simulation-based inference I         |        |   |           |     |        |
+|  4   |Tue Jul 19 | Simulation-based inference II       |        |  | [lab5]()              |     |        |
+|  4   |Thu Jul 21 | Hypothesis testing I        |        | | No lab: exam released             |  [exam02]()   |        |
+|  5   |Mon Jul 25 | Hypothesis testing II        |        |   |           |  exam02 due    |     |
+|  5   |Tue Jul 26 | Central Limit Theorem (CLT)      |        | | [lab6]()              |     |        |
+|  5   |Thu Jul 28 | Regression + inference       |        |  | Final project: peer-review             |     |        |
+|  6   |Mon Aug 01 | Data science ethics         |        |   |           |     |        |
+|  6   |Tue Aug 02 | Special topic: xaringan       |        | | [lab7]()           |     |        |
+|  6   |Thu Aug 04 | Special topic: Cryptanalysis       |        | | Final project: workday             |     |        |

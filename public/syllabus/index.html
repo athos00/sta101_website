@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
+<meta itemprop="name" content="Data Analysis and statistical inference">
+<meta itemprop="description" content="Click here for a printable PDF
+Course: STA101L-001
+Professor: Alexander Fisher
+Contact: alexander.fisher@duke.edu
+Lecture: Mon/Tue/Thu 12:30-2:35pm
+Lab: Tue/Thu 3:30-4:45pm
+Website: sta101.github.io
+Textbooks: Introduction to Modern Statistics by Mine Çetinkaya-Rundel and Johanna Hardin. Available free at https://openintro-ims.netlify.app/
+ Course objectives By the end of this course you will be able to:
+ appreciate the need for statistics in a variety of disciplines
+  create aesthetic visualizations to extract insights from data with ggplot">
+
+<meta itemprop="wordCount" content="1562">
+<meta itemprop="keywords" content="" /><meta property="og:title" content="Data Analysis and statistical inference" />
+<meta property="og:description" content="Click here for a printable PDF
+Course: STA101L-001
+Professor: Alexander Fisher
+Contact: alexander.fisher@duke.edu
+Lecture: Mon/Tue/Thu 12:30-2:35pm
+Lab: Tue/Thu 3:30-4:45pm
+Website: sta101.github.io
+Textbooks: Introduction to Modern Statistics by Mine Çetinkaya-Rundel and Johanna Hardin. Available free at https://openintro-ims.netlify.app/
+ Course objectives By the end of this course you will be able to:
+ appreciate the need for statistics in a variety of disciplines
+  create aesthetic visualizations to extract insights from data with ggplot" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://example.com/syllabus/" /><meta property="article:section" content="" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Data Analysis and statistical inference"/>
+<meta name="twitter:description" content="Click here for a printable PDF
+Course: STA101L-001
+Professor: Alexander Fisher
+Contact: alexander.fisher@duke.edu
+Lecture: Mon/Tue/Thu 12:30-2:35pm
+Lab: Tue/Thu 3:30-4:45pm
+Website: sta101.github.io
+Textbooks: Introduction to Modern Statistics by Mine Çetinkaya-Rundel and Johanna Hardin. Available free at https://openintro-ims.netlify.app/
+ Course objectives By the end of this course you will be able to:
+ appreciate the need for statistics in a variety of disciplines
+  create aesthetic visualizations to extract insights from data with ggplot"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+	<title>Data Analysis and statistical inference</title>
+	<link rel="stylesheet" href="https://example.com/css/style.min.0a8139975e37446542c2d4b8d97f6599681f746aeabdf8b31089862900bee63a.css" integrity="sha256-CoE5l143RGVCwtS42X9lmWgfdGrqvfizEImGKQC+5jo=" crossorigin="anonymous">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://example.com">STA101</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://example.com/static/schedule">schedule</a>
+				<a href="https://example.com/syllabus">syllabus</a>
+				<a href="https://example.com/office-hours/">office hours</a>
+
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://cmgr.oit.duke.edu/containers" target="_blank" rel="noopener me" title="R"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid" width="28" height="28" viewBox="0 0 724 561">
+  <defs>
+    <linearGradient id="gradientFill-1" x1="0" x2="1" y1="0" y2="1" gradientUnits="objectBoundingBox" spreadMethod="pad">
+      <stop offset="0" stop-color="rgb(203,206,208)" stop-opacity="1"/>
+      <stop offset="1" stop-color="rgb(132,131,139)" stop-opacity="1"/>
+    </linearGradient>
+    <linearGradient id="gradientFill-2" x1="0" x2="1" y1="0" y2="1" gradientUnits="objectBoundingBox" spreadMethod="pad">
+      <stop offset="0" stop-color="rgb(39,109,195)" stop-opacity="1"/>
+      <stop offset="1" stop-color="rgb(22,92,170)" stop-opacity="1"/>
+    </linearGradient>
+  </defs>
+  <path d="M361.453,485.937 C162.329,485.937 0.906,377.828 0.906,244.469 C0.906,111.109 162.329,3.000 361.453,3.000 C560.578,3.000 722.000,111.109 722.000,244.469 C722.000,377.828 560.578,485.937 361.453,485.937 ZM416.641,97.406 C265.289,97.406 142.594,171.314 142.594,262.484 C142.594,353.654 265.289,427.562 416.641,427.562 C567.992,427.562 679.687,377.033 679.687,262.484 C679.687,147.971 567.992,97.406 416.641,97.406 Z" fill="currentColor" fill-rule="evenodd"/>
+  <path d="M550.000,377.000 C550.000,377.000 571.822,383.585 584.500,390.000 C588.899,392.226 596.510,396.668 602.000,402.500 C607.378,408.212 610.000,414.000 610.000,414.000 L696.000,559.000 L557.000,559.062 L492.000,437.000 C492.000,437.000 478.690,414.131 470.500,407.500 C463.668,401.969 460.755,400.000 454.000,400.000 C449.298,400.000 420.974,400.000 420.974,400.000 L421.000,558.974 L298.000,559.026 L298.000,152.938 L545.000,152.938 C545.000,152.938 657.500,154.967 657.500,262.000 C657.500,369.033 550.000,377.000 550.000,377.000 ZM496.500,241.024 L422.037,240.976 L422.000,310.026 L496.500,310.002 C496.500,310.002 531.000,309.895 531.000,274.877 C531.000,239.155 496.500,241.024 496.500,241.024 Z" fill="currentColor" fill-rule="evenodd"/>
+</svg></a><a href="https://sta101-su22.slack.com" target="_blank" rel="noopener me" title="Slack"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.08 9C19.81 1.41 16.54-.35 9 1.92S-.35 7.46 1.92 15 7.46 24.35 15 22.08 24.35 16.54 22.08 9z"></path><line x1="12.57" y1="5.99" x2="16.15" y2="16.39"></line><line x1="7.85" y1="7.61" x2="11.43" y2="18.01"></line><line x1="16.39" y1="7.85" x2="5.99" y2="11.43"></line><line x1="18.01" y1="12.57" x2="7.61" y2="16.15"></line></svg></a><a href="https://github.com/fisher-group/sta101" target="_blank" rel="noopener me" title="Github"><svg xmlns="http://www.w3.org/2000/svg" class="feather" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://example.com/static/schedule">schedule</a></li>
+			<li><a href="https://example.com/syllabus">syllabus</a></li>
+			<li><a href="https://example.com/office-hours/">office hours</a></li>
+		</ul>
+	</div>
+
+
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Data Analysis and statistical inference</h1>
+		<div class="content">
+			<p><a href="/static/syllabus/syllabus.pdf">Click here for a printable PDF</a></p>
+<p><strong>Course:</strong> STA101L-001</p>
+<p><strong>Professor:</strong> Alexander Fisher</p>
+<p><strong>Contact:</strong> <a href="alexander.fisher@duke.edu">alexander.fisher@duke.edu</a></p>
+<p><strong>Lecture:</strong> Mon/Tue/Thu 12:30-2:35pm</p>
+<p><strong>Lab:</strong> Tue/Thu 3:30-4:45pm</p>
+<p><strong>Website:</strong> <a href="sta101.github.io">sta101.github.io</a></p>
+<p><strong>Textbooks:</strong> <a href="https://openintro-ims.netlify.app/">Introduction to Modern Statistics</a> by Mine Çetinkaya-Rundel and Johanna Hardin. Available free at <a href="https://openintro-ims.netlify.app/">https://openintro-ims.netlify.app/</a></p>
+<hr>
+<h3 id="course-objectives">Course objectives<a href="#course-objectives" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p>By the end of this course you will be able to:</p>
+<ol start="0">
+<li>
+<p>appreciate the need for statistics in a variety of disciplines</p>
+</li>
+<li>
+<p>create aesthetic visualizations to extract insights from data with <code>ggplot</code></p>
+</li>
+<li>
+<p>build, fit, and interpret linear regression models to learn from data</p>
+</li>
+<li>
+<p>perform statistical inference in a flexible, simulation-based framework</p>
+</li>
+<li>
+<p>document your workflow in reproducible <code>.rmd</code> files</p>
+</li>
+<li>
+<p>collaborate to apply statistical analyses to a question and dataset of your own choosing.</p>
+</li>
+<li>
+<p>present, and communicate the results of your analysis</p>
+</li>
+<li>
+<p>critically read and interpret statistical results from literature in various fields</p>
+</li>
+</ol>
+<h3 id="grading-policy">Grading policy<a href="#grading-policy" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<table>
+<thead>
+<tr>
+<th>Assignment</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Labs (15%)</td>
+<td>One to two labs per week.</td>
+</tr>
+<tr>
+<td>Exams (30%)</td>
+<td>Two take-home, open notes exams.</td>
+</tr>
+<tr>
+<td>Regression project (20%)</td>
+<td>Written report (PDF).</td>
+</tr>
+<tr>
+<td>Final project (35%)</td>
+<td>Proposal, video presentation and written report. Students will work in teams.</td>
+</tr>
+</tbody>
+</table>
+<p>A &gt;= 93.0, A- &lt; 93.0, B+ &lt; 90.0, B &lt; 87, B- &lt; 83, C+ &lt;80, C &lt; 77, C- &lt; 73, D+ &lt; 70, D &lt; 67, D &lt; 63, F &lt; 60</p>
+<hr>
+<p><strong>Labs</strong></p>
+<p>In labs, you will apply the concepts discussed in lecture to various data analysis scenarios. Labs will focus on both computation and conceptualization. Lab assignments will be completed using R Markdown and submitted as PDF for grading in Gradescope. While you may collaborate with others on lab assignments, your final solution should be your own.</p>
+<p><strong>Exams</strong></p>
+<p>There will be two take-home, open notes exams. Through these exams you have the opportunity to demonstrate what you&rsquo;ve learned in the course thus far. Each exam will include small analyses and computational tasks related to the content in application exercises and labs. More details about the content and structure of the exams will be discussed during the semester.</p>
+<p><strong>Projects</strong></p>
+<p>There will be a mid-semester prediction project and a final project. The prediction project will introduce you to conducting independent analyses and writing a formal report using a pre-specified data set. The final project allows you to explore a question and data set of your own. More details about<br>
+the projects will be provided during the semester. Projects will be completed in teams.</p>
+<h3 id="course-policies">Course policies<a href="#course-policies" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p><strong>Inclusive community</strong>: It is my intent that students from all backgrounds and perspectives be
+well-served by this course, that students’ learning needs be addressed both in and out of class, and that the
+diversity that the students bring to this class be viewed as a resource, strength, and benefit. It is my intent
+to present materials and activities that are respectful of diversity and in alignment with Duke’s Commitment
+to Diversity and Inclusion. Your suggestions are encouraged and appreciated. Please let me know ways to
+improve the effectiveness of the course for you personally, or for other students or student groups.</p>
+<p><strong>Attendance policy related to COVID symptoms, exposure, or infection:</strong> Student health, safety,
+and well-being are the university’s top priorities. To help ensure your well-being and the well-being of those
+around you, please do not come to class if you have symptoms related to COVID-19, have had a known
+exposure to COVID-19, or have tested positive for COVID-19. If any of these situations apply to you, you must follow university guidance related to the ongoing COVID-19 pandemic and current health and safety
+protocols.
+If you are experiencing any COVID-19 symptoms, contact student health at 919-681-9355. To keep the
+university community as safe and healthy as possible, you will be expected to follow these guidelines. Please reach out to me and your academic dean as soon as possible if you need to quarantine or isolate so that we can discuss arrangements for your continued participation in class.</p>
+<p><strong>Academic honesty:</strong> You should be familiar with Duke’s community standard: <a href="https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard">https://studentaffairs.duke.edu/conduct/about-us/duke-community-standard</a></p>
+<p>By enrolling in this course, you commit to upholding Duke’s community standard reproduced as follows:</p>
+<ul>
+<li>I will not lie, cheat, or steal in my academic endeavors;</li>
+<li>I will conduct myself honorably in all my endeavors; and</li>
+<li>I will act if the Standard is compromised.</li>
+</ul>
+<p>Any violations in academic honesty standards as outlined in the Duke Community Standard and those
+specific to this course will automatically result in a 0 for the assignment and will be reported to the Office
+of Student Conduct for further action.</p>
+<p>Please abide by the following as you work on assignments in this course:</p>
+<ul>
+<li>You may discuss lab assignments with other students; however, you may
+not directly share (or copy) code or write up with other students. For team assignments, you may
+collaborate freely within your team. You may discuss the assignment with other teams; however,
+you may not directly share (or copy) code or write up with another team. Unauthorized sharing (or
+copying) of the code or write up will be considered a violation for all students involved.</li>
+<li>You may not discuss or otherwise work with others on the exams. Unauthorized collaboration or using
+unauthorized materials will be considered a violation for all students involved. More details will be
+given closer to the exam date.</li>
+<li>Reusing code: Unless explicitly stated otherwise, you may make use of online resources (e.g. Stack-
+Overflow) for coding examples on assignments. If you directly use code from an outside source (or
+use it as inspiration), you must explicitly cite where you obtained the code. Any recycled code that is
+discovered and is not explicitly cited will be treated as plagiarism.</li>
+</ul>
+<p><strong>Late policy:</strong></p>
+<p>Late work will not be accepted. To accommodate this strict policy, your lowest lab will be dropped.</p>
+<p>Missed lab or exams can only be excused under exceptional circumstances. The Duke policy for illness requires a short-term illness report or a letter from the Dean; except in emergencies, all other absenteeism must be approved in advance (e.g., an athlete who must miss class may be excused by prior arrangement for specific days).   For emergencies, email notification is needed at the first reasonable time.</p>
+<p><strong>Procedures for Requesting a Regrade</strong></p>
+<p>Every effort will be made to mark your work accurately. We are on your side, and want you to receive every point you have worked to earn. However, sometimes grading mistakes happen. If you believe that an error has been made, return the paper to the instructor within seven days, stating your claim in writing.</p>
+<p>The following claims will be considered for re-grading:</p>
+<p>(i)    points are not totaled correctly;</p>
+<p>(ii)   the grader did not see a correct answer that is on your paper;</p>
+<p>(iii)  your answer is the same as the correct answer, but in a different form (e.g., you wrote a correct answer as 1/3 and the grader was looking for .333);</p>
+<p>(iv)  your answer to a free response question is essentially correct but stated slightly differently than the grader&rsquo;s expectation.</p>
+<p>The following claims will not be considered for re-grading:</p>
+<p>(v)   arguments about the number of points lost;</p>
+<p>(vi)  arguments about question wording.</p>
+<p>Considering re-grades consumes time and resources that TAs and the instructor would rather spend helping you understand material.  Please bring only claims of type (i), (ii), (iii), or (iv) to our attention.</p>
+<p><strong>Communication:</strong> All lecture notes, assignment instructions, an up-to-date schedule, and other course
+materials may be found on the course website.
+Announcements will be emailed to the class through sakai. Please check your email regularly to ensure you
+have the latest announcements for the course. For quick communication with your peers and the teaching
+team, see the course slack for general questions and discussion.</p>
+<p><strong>Accessibility:</strong> If there is any portion of the course that is not accessible to you due to challenges with
+technology or the course format, please let me know so we can make appropriate accommodations.
+The Student Disability Access Office (SDAO) is available to ensure that students are able to engage with
+their courses and related assignments. Students should be in touch with the Student Disability Access Office
+to request or update accommodations under these circumstances.</p>
+<h3 id="additional-resources">Additional resources<a href="#additional-resources" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
+<p><strong>Academic Resource Center:</strong> There are times when you may need help with the class beyond what can be
+provided by the teaching team. In those instances, I encourage you to visit the Academic Resource Center.
+The Academic Resource Center (ARC) offers free services to all students during their undergraduate careers
+at Duke. Services include Learning Consultations, Peer Tutoring and Study Groups, ADHD/LD Coaching,
+Outreach Workshops, and more. Because learning is a process unique to every individual, they work with
+each student to discover and develop their own academic strategy for success at Duke. Contact the ARC
+to schedule an appointment. Undergraduates in any year, studying any discipline can benefit! Contact
+<a href="ARC@duke.edu">ARC@duke.edu</a>, 919-684-5917.</p>
+<p><strong>CAPS:</strong> Duke Counseling &amp; Pyschological Services (CAPS) helps Duke Students enhance strengths and
+develop abilities to successfully live, grow and learn in their personal and academic lives. CAPS recognizes
+that we are living in unprecedented times and that the changes, challenges and stressors brought on by the
+COVID-19 pandemic have impacted everyone, often in ways that are tax our well-being. CAPS offers many
+services to Duke undergraduate students, including brief individual and group counseling, couples counseling
+and more. CAPS staff also provides outreach to student groups, particularly programs supportive of at-risk
+populations, on a wide range of issues impacting them in various aspects of campus life. CAPS provides
+services to students via Telehealth. To initiate services, you can contact their front desk at 919-660-1000.</p>
+
+		</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2022 <a href="https://example.com">Alexander Fisher</a> &#183; <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0</a></p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://example.com/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
+
+
+
+	<script src="https://example.com/js/bundle.min.7d8545daa55d62427355498dd8da13f98ff79a7938ce7d2a5e2ae1ec0de3beb8.js" integrity="sha256-fYVF2qVdYkJzVUmN2NoT+Y/3mnk4zn0qXirh7A3jvrg=" crossorigin="anonymous"></script>
+	
+
+</body>
+
+</html>

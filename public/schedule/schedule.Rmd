@@ -1,9 +1,8 @@
 ---
 title: "Schedule"
-date: "Summer 2022"
 output:
-  html_document: 
-    css: "custom-site.css"
+  html_document: output
+    #css: "custom-site.css"
 ---
 
 ```{r setup, include=FALSE}
@@ -44,6 +43,8 @@ schedule = schedule %>%
 schedule %>%
   kable(format = "markdown")
 ```
+
+Summer II, 2022
 
 |Week |Date       |Topic    |Prepare |AE |Lab |Exam |Project |
 |:----|:----------|:--------|:-------|:--|:----------|:----|:-------|
