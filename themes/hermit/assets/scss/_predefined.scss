@@ -11,6 +11,10 @@ body.dark-mode,
 body.dark-mode main * {
     //background: #e8eef2;
     background: #FFFFFF;
+    a:link {color: $theme;}  
+    a:visited {color: $theme}  
+    a:hover {color: $theme}  
+    a:active {color: $theme}
     color: #000000
 }
 

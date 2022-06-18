@@ -25,23 +25,12 @@
 	<link rel="shortcut icon" href="/favicon.ico">
 	<title>Demo</title>
 	<link rel="alternate" type="application/rss+xml" href="https://example.com/tags/demo/index.xml" title="Demo" />
-	<link rel="stylesheet" href="https://example.com/css/style.min.437874b033d40b79de6b4469a52e8e3f750032691a460783cc4eccbfe2ff3a27.css" integrity="sha256-Q3h0sDPUC3nea0RppS6OP3UAMmkaRgeDzE7Mv+L/Oic=" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://example.com/css/style.min.7a4754a765bc1b8a358436e5aaf7a0ad2497210f5f4aa32a8e538b68f7803bfb.css" integrity="sha256-ekdUp2W8G4o1hDblqvegrSSXIQ9fSqMqjlOLaPeAO/s=" crossorigin="anonymous">
 </head>
 
 <body id="page">
 	
-	<header id="site-header" class="animated slideInUp">
-		<div class="hdr-wrapper section-inner">
-			<div class="hdr-left">
-				<div class="site-branding">
-					<a href="https://example.com">STA101</a>
-				</div>
-				<nav class="site-nav hide-in-mobile">
-					
-				<a href="https://example.com/schedule/schedule">schedule</a>
-				<a href="https://example.com/syllabus">syllabus</a>
-				<a href="https://example.com/office-hours/">office hours</a>
-		<div id="light-dark" class="js-toggle–checked">
+	<div id="light-dark" class="js-toggle–checked">
 	  <div class="js-toggle-wrapper">
     <div class="js-toggle">
         <div class="js-toggle-track">
@@ -163,8 +152,49 @@
     box-shadow: 0px 0px 5px 5px rgb(255, 167, 196);
   }
 </style>
+
+<script>
+    var body = document.body;
+	var switcher = document.getElementsByClassName('js-toggle')[0];
+
+	
+	switcher.addEventListener("click", function() {
+        this.classList.toggle('js-toggle--checked');
+        this.classList.add('js-toggle--focus');
+		
+		if (this.classList.contains('js-toggle--checked')) {
+			body.classList.add('dark-mode');
+			
+			localStorage.setItem('darkMode', 'true');
+		} else {
+			body.classList.remove('dark-mode');
+			setTimeout(function() {
+				localStorage.removeItem('darkMode');
+			}, 100);
+		}
+	})
+
+	
+	if (localStorage.getItem('darkMode')) {
+		
+        switcher.classList.add('js-toggle--checked');
+        body.classList.add('dark-mode');
+	}
+
+</script>
     
 	</div>
+	<header id="site-header" class="animated slideInUp">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://example.com">STA101</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					
+				<a href="https://example.com/schedule/schedule">schedule</a>
+				<a href="https://example.com/syllabus">syllabus</a>
+				<a href="https://example.com/office-hours/">office hours</a>
 
 				</nav>
 			</div>
