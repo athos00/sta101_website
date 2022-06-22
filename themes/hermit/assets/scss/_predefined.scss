@@ -2,7 +2,9 @@
 //
 $theme: #14aaeb;
 $text: #e8eef2;
-$light-grey: #000000;
+//$text: #fdf6e3;
+//$light-grey: #000000;
+$light-grey: #002b36;
 $dark-grey: #3B3E48;
 $highlight-grey: #7d828a;
 $midnightblue: #2c3e50;
@@ -10,12 +12,12 @@ $midnightblue: #2c3e50;
 body.dark-mode, 
 body.dark-mode main * {
     //background: #e8eef2;
-    background: #FFFFFF;
+    background: #fdf6e3;
     a:link {color: $theme;}  
     a:visited {color: $theme}  
     a:hover {color: $theme}  
     a:active {color: $theme}
-    color: #000000
+    color: #002b36
 }
 
 // Fonts

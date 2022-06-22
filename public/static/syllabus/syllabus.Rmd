@@ -47,10 +47,10 @@ By the end of this course you will be able to:
 
 | Assignment               | Description                                                                   |
 |------------------------------------|------------------------------------|
-| Labs (15%)               | One to two labs per week.                                                     |
+| Labs (20%)               | One to two labs per week.                                                     |
 | Exams (30%)              | Two take-home, open notes exams.                                              |
 | Regression project (20%) | Written report (PDF).                                                         |
-| Final project (35%)      | Proposal, video presentation and written report. Students will work in teams. |
+| Final project (30%)      | Proposal, video presentation and written report. Students will work in teams. |
 
 A $\geq$ 93.0, A- < 93.0, B+ < 90.0, B < 87, B- < 83, C+ <80, C < 77, C- < 73, D+ < 70, D < 67, D < 63,   
 F < 60
