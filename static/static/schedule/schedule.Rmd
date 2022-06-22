@@ -15,6 +15,7 @@ knitr::opts_chunk$set(echo = FALSE, include = FALSE, eval=F)
 ```{r load-libraries}
 library(tidyverse)
 library(knitr)
+library(emo)
 ```
 
 ```{r smart-date-setup}
