@@ -17,7 +17,7 @@ output:
 
 **Lab:** Tue/Thu 3:30-4:45pm
 
-**Website:** [sta101.github.io](sta101.github.io)
+**Website:** [sta101.github.io](https://sta101.github.io)
 
 **Textbooks:** [Introduction to Modern Statistics](https://openintro-ims.netlify.app/) by Mine Çetinkaya-Rundel and Johanna Hardin. Available free at [https://openintro-ims.netlify.app/](https://openintro-ims.netlify.app/)
 
