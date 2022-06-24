@@ -53,7 +53,7 @@ menu:
       url: /syllabus
       weight: 20
     - name: office hours
-      url: office-hours/
+      url: https://duke.box.com/s/5d31hvs4jkwcn4qpwz827zkpiaic7177
       weight: 30
     # - name: tutorials
     # url: tutorials/
