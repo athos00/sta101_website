@@ -53,7 +53,7 @@ Find all assignments and due dates here. This schedule updates frequently.
 |Week |Date       |Topic    |Prepare |AE |Lab |Exam |Project |
 |:--:|:-----|:--------------|:---:|:----|:----------|:----|:-------|
 |   1  |Mon Jun 27 |  Intro to R       |  [`r emo::ji("book")`](/prepare/week-1)     |[ae 1](/static/appex/ae1.html)   |           |     |        |
-|     |Tue Jun 28 |  Exploratory data analysis I       | [`r emo::ji("book")`](/prepare/week-1)     | | [lab 1]()             |     |        |
+|     |Tue Jun 28 |  Exploratory data analysis I       | [`r emo::ji("book")`](/prepare/week-1)     | | [lab 1](/static/labs/lab01.html)             |     |        |
 |     |Thu Jun 30 |  Exploratory data analysis II       | [`r emo::ji("book")`](/prepare/week-1)        | | [lab 2]()             |     |        |
 |  2   |Mon Jul 04 |NO CLASS: Independence Day |        |   |           |     |        |
 |     |Tue Jul 05 | Simple regression        |     | | [lab 3]()            |     |        |
