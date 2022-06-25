@@ -1,6 +1,6 @@
 ---
 title: "Lab 01: Hello R!"
-subtitle: "Due Wednesday June 29 at 11:59pm"
+subtitle: "Due Friday July 1 at 11:59pm"
 author: ""
 date: ""
 output:
