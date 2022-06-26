@@ -36,8 +36,10 @@ params:
        #<a class="inline-block" href="#"><img class="" src="{{ (default "Rlogo.svg" ) | relURL }}" alt="mysite" width="26"></a>
     - name: slack
       url: https://sta101-su22.slack.com
-    - name: github
-      url: https://github.com/fisher-group/sta101
+    #- name: github
+      #url: https://github.com/fisher-group/sta101
+    - name: book
+      url: https://openintro-ims.netlify.app/
   themeColor: '#494f5c'
   #themeColor: '#000000'
   

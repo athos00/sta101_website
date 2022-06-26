@@ -1,0 +1,28 @@
+---
+title: "Lab 02: Data visualization"
+output: html_document
+date: "Due Tuesday July 5 at 11:59pm"
+css: "labs.css"
+---
+
+
+By the end of this lab you will effectively visualize numeric and categorical data.
+
+## Getting started
+
+\ 1. Download the lab template by pasting the code below in your **console**:
+
+```{r download-file, eval=F}
+download.file("https://sta101.github.io/static/labs/lab02_template.Rmd",
+              destfile = "lab02.rmd")
+```
+
+\ 2. Under the "Files" tab on the right hand side, click on `lab02.rmd` to open the lab template.
+
+
+\ 3. Complete the exercises below using the space provided.
+
+## Warm up
+
+Be sure to update the YAML at the top of the document to include your name and the date.
+
