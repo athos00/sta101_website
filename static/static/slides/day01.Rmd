@@ -287,7 +287,9 @@ Services include
 
 - Post on [slack](https://sta101-su22.slack.com/)
 
-- When you're done, fill out [this short questionnaire]()
+- When you're done, fill out [this short questionnaire](https://forms.gle/UkBhKxZQvnh1mToRA)
+
+- **Notice**: Drop/Add ends Wednesday June 29 at 11:59pm
 
 ```{r echo = F}
 countdown::countdown(minutes = 5, seconds = 0)
