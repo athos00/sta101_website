@@ -370,10 +370,11 @@ pre code {
 <p>By the end of today you will…</p>
 <ul>
 <li>begin to know your way around RStudio</li>
-<li>be able to define package, data frame, variable, function, argument
-and pipe</li>
-<li>use a few functions, including: glimpse(), count(), group_by() and
-summarize()</li>
+<li>be able to define package, data frame, variable, function,
+argument</li>
+<li>use a few functions, including: <code>glimpse()</code>,
+<code>count()</code>, <code>group_by()</code> and
+<code>summarize()</code></li>
 <li>play with data</li>
 </ul>
 </div>
@@ -395,6 +396,9 @@ console:</li>
 x + x^2</code></pre>
 <pre><code>x = 1:10
 x * 7</code></pre>
+<p>In the last couple examples we save some value as the object “x”.</p>
+<p>We can “print” x to the screen by typing the name of the object (“x”)
+in the console or in a code chunk.</p>
 </div>
 <div id="tour-of-rstudio" class="section level2">
 <h2>Tour of RStudio</h2>
@@ -407,22 +411,68 @@ x * 7</code></pre>
 </div>
 <div id="load-a-package" class="section level2">
 <h2>Load a package</h2>
-<pre class="r"><code>library(tidyverse)</code></pre>
-<pre><code>## ── Attaching packages ─────────────────────────────────────── tidyverse 1.3.1 ──</code></pre>
-<pre><code>## ✓ ggplot2 3.3.5     ✓ purrr   0.3.4
-## ✓ tibble  3.1.6     ✓ dplyr   1.0.7
-## ✓ tidyr   1.1.4     ✓ stringr 1.4.0
-## ✓ readr   2.1.1     ✓ forcats 0.5.1</code></pre>
-<pre><code>## ── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-## x dplyr::filter() masks stats::filter()
-## x dplyr::lag()    masks stats::lag()</code></pre>
+<pre class="r"><code>library(tidyverse) </code></pre>
 </div>
 <div id="load-data" class="section level2">
 <h2>Load data</h2>
-<pre class="r"><code>data(cars)</code></pre>
-<ul>
-<li>Use <code>?</code> to learn about data</li>
-</ul>
+<pre class="r"><code>roster = read_csv(&quot;https://sta101.github.io/static/appex/data/sample-roster.csv&quot;)
+survey = read_csv(&quot;https://sta101.github.io/static/appex/data/sample-survey.csv&quot;)</code></pre>
+<p><strong>Question</strong>: What objects store the data in the code
+chunk above? Can you print them to the screen?</p>
+<p>Create a new code chunk with <code>CMD+SHIFT+I</code> (mac) or
+<code>CTRL+SHIFT+I</code> (windows/linux)</p>
+<p>So far we’ve already seen two functions. <code>library</code> and
+<code>read_csv</code>. <strong>Functions</strong> in R are attached to
+parentheses and take an input, aka an <strong>argument</strong>, and
+often (but not always) return an output. To learn more about a function,
+you can check the documentation with <code>?</code>,
+e.g. <code>?library</code>.</p>
+</div>
+<div id="demos" class="section level2">
+<h2>Demos</h2>
+<p>Let’s glimpse the data frame.</p>
+<pre class="r"><code>glimpse(survey)</code></pre>
+<pre><code>## Rows: 12
+## Columns: 5
+## $ name                 &lt;chr&gt; &quot;A&quot;, &quot;Appa&quot;, &quot;Bumi&quot;, &quot;Soka&quot;, &quot;Katara&quot;, &quot;Suki&quot;, &quot;Z…
+## $ email                &lt;chr&gt; &quot;the-last-Rbender@duke.edu&quot;, &quot;yip-yip-appa@duke.e…
+## $ bender               &lt;chr&gt; &quot;Airbender&quot;, &quot;Airbender&quot;, &quot;Earthbender&quot;, &quot;None&quot;, …
+## $ previous_programming &lt;chr&gt; &quot;No&quot;, &quot;No&quot;, &quot;No&quot;, &quot;Somewhat&quot;, &quot;Yes&quot;, &quot;Yes&quot;, &quot;Yes&quot;…
+## $ cat_dog              &lt;chr&gt; &quot;dog&quot;, &quot;cat&quot;, &quot;cat&quot;, &quot;dog&quot;, &quot;dog&quot;, &quot;cat&quot;, &quot;cat&quot;, …</code></pre>
+<p>To look at all of it, we can use <code>view()</code></p>
+<pre class="r"><code>view(survey)</code></pre>
+<p><strong>View the roster data in the console</strong></p>
+<p>Terminology: “columns” of a dataframe are called
+<strong>variables</strong> whereas “rows” are
+<strong>observations</strong>.</p>
+<p><strong>Question: How many variables are in the data frame
+<code>survey</code>? How many observations? What about the data frame
+<code>roster</code>?</strong></p>
+<p>Why must I input net-id email?</p>
+<pre class="r"><code>roster %&gt;% 
+  left_join(survey, by = &quot;email&quot;)</code></pre>
+<p>Count the benders in the data</p>
+<pre class="r"><code>count(survey, bender)</code></pre>
+<pre><code>## # A tibble: 5 × 2
+##   bender          n
+##   &lt;chr&gt;       &lt;int&gt;
+## 1 Airbender       3
+## 2 Earthbender     3
+## 3 Firebender      4
+## 4 None            1
+## 5 Waterbender     1</code></pre>
+<pre class="r"><code>survey %&gt;%
+  mutate(pet = ifelse(cat_dog == &quot;dog&quot;, 1, 0)) %&gt;%
+  group_by(bender) %&gt;%
+  summarize(proportion_dog = mean(pet))</code></pre>
+<pre><code>## # A tibble: 5 × 2
+##   bender      proportion_dog
+##   &lt;chr&gt;                &lt;dbl&gt;
+## 1 Airbender            0.667
+## 2 Earthbender          0.333
+## 3 Firebender           0    
+## 4 None                 1    
+## 5 Waterbender          1</code></pre>
 </div>
 
 

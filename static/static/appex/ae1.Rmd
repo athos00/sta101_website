@@ -55,12 +55,12 @@ We can "print" x to the screen by typing the name of the object ("x") in the con
 
 ## Load a package
 
-```{r load-package}
+```{r load-package, warning=F, message=F}
 library(tidyverse) 
 ```
 
 ## Load data
-```{r load-data}
+```{r load-data, warning=F, message=F}
 roster = read_csv("https://sta101.github.io/static/appex/data/sample-roster.csv")
 survey = read_csv("https://sta101.github.io/static/appex/data/sample-survey.csv")
 ```
@@ -69,14 +69,13 @@ survey = read_csv("https://sta101.github.io/static/appex/data/sample-survey.csv"
 
 Create a new code chunk with `CMD+SHIFT+I` (mac) or `CTRL+SHIFT+I` (windows/linux)
 
-
-So far we've already seen two functions. `library` and `read_csv`. **Functions** in R are attached to parentheses and take an input (argument) and often (but not always) return an output. To learn more about a function, you can check the documentation with `?`, e.g. `?library`.
-
+So far we've already seen two functions. `library` and `read_csv`. **Functions** in R are attached to parentheses and take an input, aka an **argument**, and often (but not always) return an output. To learn more about a function, you can check the documentation with `?`, e.g. `?library`.
 
 
-**Demos**
 
-Let's glimpse the data.
+## Demos
+
+Let's glimpse the data frame. 
 
 ```{r glimpse-data}
 glimpse(survey)
@@ -88,9 +87,15 @@ To look at all of it, we can use `view()`
 view(survey)
 ```
 
+**View the roster data in the console**
+
+Terminology: "columns" of a dataframe are called **variables** whereas "rows" are **observations**.
+
+**Question: How many variables are in the data frame `survey`? How many observations? What about the data frame `roster`?**
+
 Why must I input net-id email?
 
-```{r join-roster eval=F}
+```{r join-roster, eval=F}
 roster %>% 
   left_join(survey, by = "email")
 ```
@@ -104,7 +109,8 @@ count(survey, bender)
 
 ```{r count-cat-dog-by-group}
 survey %>%
+  mutate(pet = ifelse(cat_dog == "dog", 1, 0)) %>%
   group_by(bender) %>%
-  count(cat-dog)
+  summarize(proportion_dog = mean(pet))
 ```
 

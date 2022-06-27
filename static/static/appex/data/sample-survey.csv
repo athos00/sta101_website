@@ -1,4 +1,4 @@
-name,email,bender,previous-programming,cat-dog
+name,email,bender,previous_programming,cat_dog
 A,the-last-Rbender@duke.edu,Airbender,No,dog
 Appa,yip-yip-appa@duke.edu,Airbender,No,cat
 Bumi,ok-bumi@duke.edu,Earthbender,No,cat
@@ -10,5 +10,4 @@ Momo,momo123@duke.edu,Airbender,Yes,dog
 Uncle Iroh,uncle-iroh123@duke.edu,Firebender,No,cat
 Azula,azula123@duke.edu,Firebender,Yes,cat
 Mai,mai123@duke.edu,Firebender,Yes,cat
-Ty Lee,tylee123@duke.edu,None,No,dog
 Toph Beifong,the-blind-bandit@duke.edu,Earthbender,No,dog
