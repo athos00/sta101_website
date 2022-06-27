@@ -295,8 +295,14 @@ Services include
 countdown::countdown(minutes = 5, seconds = 0)
 ```
 
+```{r}
+
+```
+
+
+
 ## Jump in
 
-- [Click here](todo) to go to the Duke containers website. Click "Reserve"
+- [Click here](https://cmgr.oit.duke.edu/containers) to go to the Duke containers website. Click "Reserve"
 
 - Onto today's application exercise: [ae1](https://sta101.github.io/static/appex/ae1.html)

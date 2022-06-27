@@ -67,7 +67,7 @@ survey = read_csv("https://sta101.github.io/static/appex/data/sample-survey.csv"
 
 **Question**: What objects store the data in the code chunk above? Can you print them to the screen?
 
-Create a new code chunk with `CMD+SHIFT+I` (mac) or `CTRL+SHIFT+I` (windows/linux)
+Create a new code chunk with `CMD+OPTION+I` (mac) or `CTRL+ALT+I` (windows/linux)
 
 So far we've already seen two functions. `library` and `read_csv`. **Functions** in R are attached to parentheses and take an input, aka an **argument**, and often (but not always) return an output. To learn more about a function, you can check the documentation with `?`, e.g. `?library`.
 

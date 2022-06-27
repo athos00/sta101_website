@@ -27,21 +27,15 @@ output:
 
 By the end of this course you will be able to:
 
-0. appreciate the need for statistics in a variety of disciplines
+1. explore, visualize and analyze real data in a reproducible manner
 
-1. create aesthetic visualizations to extract insights from data with `ggplot` 
+2. gain proficiency in the statistical computing language R and integrated development environment RStudio
 
-2. build, fit, and interpret linear regression models to learn from data
+3. work collaboratively to apply statistical analyses to a data set of your own choosing 
 
-3. perform statistical inference in a flexible, simulation-based framework
+4. present and communicate statistical results effectively
 
-4. document your workflow in reproducible `.rmd` files
-
-5. collaborate to apply statistical analyses to a question and dataset of your own choosing.
-
-6. present, and communicate the results of your analysis
-
-7. critically read and interpret statistical results from literature in various fields
+5. be a critical consumer of statistics
 
 ### Grading policy
 
@@ -123,7 +117,7 @@ Missed lab or exams can only be excused under exceptional circumstances. The Duk
 
 **Procedures for Requesting a Regrade**
 
-Every effort will be made to mark your work accurately. We are on your side, and want you to receive every point you have worked to earn. However, sometimes grading mistakes happen. If you believe that an error has been made, return the paper to the instructor within seven days, stating your claim in writing.
+Every effort will be made to mark your work accurately. We are on your side, and want you to receive every point you have worked to earn. However, sometimes grading mistakes happen. If you believe that an error has been made, return the paper to the instructor within four days, stating your claim in writing.
 
 The following claims will be considered for re-grading:
 

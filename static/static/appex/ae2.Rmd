@@ -1,0 +1,29 @@
+---
+title: "Data analysis I"
+subtitle: "STA 101"
+output: html_document
+date: "June 28, 2022"
+---
+
+## Today
+
+By the end of today you will... 
+
+## Getting started
+
+Download this application exercise by pasting the code below into your **console** (bottom left of screen)
+
+```{r download-rmd, eval=F}
+download.file("https://sta101.github.io/static/appex/ae2.Rmd",
+destfile = "ae2.rmd")
+```
+
+```{r load-libraries}
+library(tidyverse)
+```
+
+```{r load-data}
+
+```
+
+## 
