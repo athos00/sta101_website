@@ -3,7 +3,7 @@ languageCode: en-us
 defaultContentLanguage: en
 title: STA101
 theme: hermit
-publishDir: 'public/' #'sta101.github.io/',
+publishDir: 'sta101.github.io/'
 pygmentsCodefences: yes
 pygmentsUseClasses: yes
 rssLimit: 10
