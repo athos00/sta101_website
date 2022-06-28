@@ -26,3 +26,14 @@ download.file("https://sta101.github.io/static/labs/lab02_template.Rmd",
 
 Be sure to update the YAML at the top of the document to include your name and the date.
 
+### Packages
+
+Today we will use our standard 
+```{r load-packages}
+library(tidyverse)
+```
+
+```{r load-data}
+courage = read_csv("https://sta101.github.io/static/labs/data/courage.csv")
+```
+
