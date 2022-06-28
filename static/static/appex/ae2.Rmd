@@ -5,6 +5,11 @@ output: html_document
 date: "June 28, 2022"
 ---
 
+## Bulletin
+
+- first lab today, due Friday at 11:59pm on Gradescope
+- be sure to complete prepare material (on the [schedule](https://sta101.github.io/static/schedule/schedule.html)) before each class
+
 ## Today
 
 By the end of today you will...
