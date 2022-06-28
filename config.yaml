@@ -1,6 +1,7 @@
 baseURL: https://sta101.github.io
 languageCode: en-us
 defaultContentLanguage: en
+render_with_liquid: false
 title: STA101
 theme: hermit
 publishDir: 'sta101.github.io/'
