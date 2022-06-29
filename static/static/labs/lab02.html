@@ -11,7 +11,7 @@
 
 
 
-<title>Lab 02: Data visualization</title>
+<title>Lab 02: Take Courage with data analysis</title>
 
 <script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
 // be compatible with the behavior of Pandoc < 2.8).
@@ -502,7 +502,8 @@ pre code {
 
 
 
-<h1 class="title toc-ignore">Lab 02: Data visualization</h1>
+<h1 class="title toc-ignore">Lab 02: Take Courage with data
+analysis</h1>
 <h4 class="date">Due Tuesday July 5 at 11:59pm</h4>
 
 </div>
@@ -519,6 +520,194 @@ categorical data.</p>
 <p> 2. Under the “Files” tab on the right hand side, click on
 <code>lab02.rmd</code> to open the lab template.</p>
 <p> 3. Complete the exercises below using the space provided.</p>
+</div>
+<div id="warm-up" class="section level2">
+<h2>Warm up</h2>
+<p>Be sure to update the YAML at the top of the document to include your
+name and the date.</p>
+<div id="packages" class="section level3">
+<h3>Packages</h3>
+<p>Today we will use our standard</p>
+<pre class="r"><code>library(tidyverse)</code></pre>
+</div>
+<div id="data" class="section level3">
+<h3>Data</h3>
+<p>Today, we will be working with data from the first three full seasons
+of the NC Courage, a highly successful National Women’s Soccer League
+(NWSL) team located near Duke in Cary, NC. The Courage moved to the
+Triangle from Western New York in 2017 and had three epic seasons in NC,
+culminating in winning the championship game that was held at their
+stadium in Cary in 2019! (Data for this lab was sourced from the
+<code>nwslR</code> package on Github, and verified with the NC Courage
+website by Meredith Brown in a previous semester.)</p>
+<pre class="r"><code>courage = read_csv(&quot;https://sta101.github.io/static/labs/data/courage.csv&quot;)</code></pre>
+</div>
+</div>
+<div id="exercises" class="section level2">
+<h2>Exercises</h2>
+<ol style="list-style-type: decimal">
+<li><p>How many observations are there in the courage data frame? What
+does each observation in the <code>courage</code> data frame represent?
+Write your answer as narrative under “Exercise 1”. You do not need to
+create a new code chunk here.</p></li>
+<li><p>How many games did the Courage win, lose and tie between 2017 and
+2019 seasons? Show your code in the space provided under “Exercise 2”
+and write your response as narrative.</p></li>
+<li><p>How many points do the Courage typically win by (on average)? Use
+the code chunk below to get started. In the code below,
+<code>abs()</code> is the absolute value function. Why do we want to use
+this absolute value function here? Write your answers as narrative (but
+keep the code chunk to show your work).</p></li>
+</ol>
+<p>Hint: we are only interested in games the Courage win.</p>
+<pre class="r"><code>courage %&gt;%
+  mutate(win_pts = abs(home_pts - away_pts)) %&gt;%
+  filter(___) %&gt;%
+  summarize(___)</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>How many points do the Courage score when they win (on average)?
+Note this is <strong>different than how many points</strong> they win
+by. How many points do the Courage score when they lose on average? Use
+the code below to get started. Note that we save the mutated data frame
+as “courage2” so that we can access it in a future question.</li>
+</ol>
+<pre class="r"><code>courage2 = courage %&gt;%
+  mutate(courage_pts = ifelse(home_team == &quot;NC&quot;, home_pts, away_pts))
+
+courage2 %&gt;%
+  group_by(___) %&gt;%
+  summarize(___)</code></pre>
+<p>In the code chunk above we use <code>ifelse</code> logic to mutate a
+new column.</p>
+<ul>
+<li><code>home_team == &quot;NC&quot;</code> finds all rows where the home team is
+NC Courage.</li>
+<li>if the home team is NC Courage, then we assign the
+<code>courage_pts</code> column with <code>home_pts</code> otherwise
+(else) Courage must be the away team and we populate
+<code>courage_pts</code> with <code>away_pts</code>.</li>
+</ul>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Create a bar plot of Courage wins, losses and ties. Change the
+x-axis label to “Game outcome” and give the graph an informative
+title.</p></li>
+<li><p>Next we’ll investigate visually whether or not NC Courage has a
+home-field advantage. To start, let’s build on the <code>courage2</code>
+data frame. Add a new column called <code>home_courage</code> that takes
+the value “home” if Courage is the home team and “away” if Courage is
+the away team. Hint: use the <code>ifelse</code> logic from exercise 4.
+Next, add another new column, <code>total_pts</code> that shows the sum
+total of points scored by both teams in a game. Finally add a third new
+column <code>opponent_pts</code> that shows the total points scored by
+the opposing team. Save your entire data frame as
+<code>courage3</code>.</p></li>
+<li><p>Using your <code>courage3</code> data frame from the previous
+exercise, create a scatter plot of <code>opponent_pts</code> (y) vs
+<code>courage_pts</code> (x). Color the scatter plot by whether the
+Courage are <code>home</code> or <code>away</code>. Add
+<code>geom_jitter</code> as well as the line <span class="math inline">\(y=x\)</span> using the code below. Finally,
+<code>facet</code> your plot by season. Be sure to include informative
+titles for the plot, axes and legend. What does the line represent? What
+does it mean for a point to fall above the line? Below the line? Write
+your answer in your lab narrative.</p></li>
+</ol>
+<pre class="r"><code># data-here %&gt;%
+  ggplot(...code here...) + 
+  # insert faceting/labels code here +
+  geom_jitter(width = 0.1, height = 0.1) +
+  geom_abline(slope=1, intercept=0)</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li><p>How many home games did Courage play in the 2017-2019 seasons?
+How many away games? Hint: use <code>courage3</code> to answer this
+question. Be sure to show your work (code) and answer the question
+(narrative).</p></li>
+<li><p>What proportion of <strong>home</strong> games do Courage win?
+What proportion of <strong>away</strong> games do Courage win/? Hint:
+use <code>courage3</code> and <code>count</code> as part of your
+solution. Do you think this is evidence of a home-field advantage? Why
+or why not?</p></li>
+</ol>
+</div>
+<div id="a-look-at-where-were-headed" class="section level2">
+<h2>A look at where we’re headed…</h2>
+<ol start="10" style="list-style-type: decimal">
+<li><p>If we want to formally test whether or not the Courage have a
+home-field advantage, then we must first define what this means! In your
+own words, what do you think a home-field advantage means? (while there
+is a right answer, this part is graded for completion, so don’t worry
+too much about answering this in <em>exactly</em> the right
+way.</p></li>
+<li><p>Now that you’ve defined what it means to have a home field
+advantage, define what it means to <strong>not</strong> have a
+home-field advantage.</p></li>
+</ol>
+<p>We’ll pick-up here in the next class.</p>
+</div>
+<div id="formatting" class="section level2">
+<h2>Formatting</h2>
+<p><strong>Reminder</strong>: For all assignments in this course there
+is a “formatting” component to the grade. To receive full points for
+“formatting”, you must:</p>
+<p> 1. Have your name (and team name if appropriate) at the top of the
+knitted document</p>
+<p> 2. Pipes <code>%&gt;%</code> and ggplot layers <code>+</code> should
+be followed by a newline (see formatting above)</p>
+<p> 3. Your code should be under the 80 character code limit. (You
+shouldn’t have to scroll to see all your code on the knitted
+document).</p>
+<p> 4. All exercises and corresponding pages should be linked on
+gradescope.</p>
+<p>These necessary “tidyverse” style choices are good general practice
+and will help make your code more legible. For a more extensive list of
+recommended guidelines, <a href="https://style.tidyverse.org/">click
+here</a>.</p>
+</div>
+<div id="submitting-to-gradescope" class="section level2">
+<h2>Submitting to gradescope</h2>
+<p>In this class, we will submit <code>.pdf</code> documents to
+Gradescope. Once you are fully satisfied with your lab, Knit to .pdf to
+create a .pdf document. You may notice that the formatting/theme of the
+report has changed – this is expected. Remember – you must turn in a
+.pdf file to the Gradescope page before the submission deadline for
+credit. To submit your assignment:</p>
+<ul>
+<li><p>Go to <a href="http://www.gradescope.com" class="uri">http://www.gradescope.com</a> and click Log in in the top
+right corner. - Click <code>School Credentials</code>,
+<code>Duke NetID</code> and log in using your NetID
+credentials.</p></li>
+<li><p>Click on your STA 101 course.</p></li>
+<li><p>Click on the assignment, and you’ll be prompted to submit
+it.</p></li>
+<li><p>Mark the pages associated with each exercise, 1 - 5. All of the
+papers of your lab should be associated with at least one question
+(i.e., should be “checked”). - Select the first page of your .pdf
+submission to be associated with the “Formatting” section.</p></li>
+</ul>
+<p>Grading</p>
+<p>Total: 50 pts.</p>
+<pre><code>Exercise 1: 2pts
+
+Exercise 2: 4pts
+
+Exercise 3: 6pts
+
+Exercise 4: 4pts
+
+Exercise 5: 6pts
+
+Exercise 6: 6pts
+
+Exercise 7: 8pts
+
+Exercise 8: 3pts
+
+Exercise 9: 3pts
+
+Exercise 10: 1pt
+
+Exercise 11: 1pt
+
+Workflow and formatting:  6pts</code></pre>
 </div>
 
 
