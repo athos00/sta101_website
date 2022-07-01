@@ -16,9 +16,7 @@ data(mpg)
 
 ## Exercise 1
 
-```{r ex-1}
-# code here
-```
+(answer here)
 
 ## Exercise 2
 
@@ -41,6 +39,18 @@ data(mpg)
 ## Exercise 5
 
 ```{r ex-5}
+# code here
+```
+
+## Exercise 6
+
+```{r ex-6}
+# code here
+```
+
+# Exercise 7
+
+```{r ex-7}
 # code here
 ```
 

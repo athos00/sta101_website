@@ -37,6 +37,8 @@ data(mpg)
 
 ## Exercises
 
+0. How many observations are in the `mpg` data set? How many variables?
+
 1. Create a scatterplot with engine displacement on the x-axis and city miles per gallon (mpg) on the y-axis, color the points by the number of cylinders the vehicle has. Be sure to appropriately label the axes and give your graph a title. Discuss any trends you notice.
 
 2. What proportion of vehicles in the dataset have a 4 cylinder engine? What proportion have an 8 cylinder engine?
