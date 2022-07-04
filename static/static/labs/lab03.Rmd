@@ -1,5 +1,5 @@
 ---
-title: "Lab 03: "
+title: "Lab 03: Do you even lift?"
 output: html_document
 date: "Due Friday July 8 at 11:59pm"
 css: "labs.css"
@@ -42,7 +42,7 @@ library(tidymodels)
 
 Load the data:
 
-```{r load-data, warning=F, message=F}
+```{r load-data, warning=F, message=F, eval = F}
 ipf = read_csv("https://sta101.github.io/static/labs/data/ipf_lifts.csv")
 ```
 
