@@ -59,8 +59,10 @@ Effectively this model says our data $y$ is linearly related to $x$ but is not p
 Let's examine January 2020 open prices of Microsoft and Apple stocks to illustrate some ideas.
 
 ```{r simple-example}
-stocks %>%
-  slice(1:20) %>%
+stocks_subset = stocks %>%
+  slice(1:20)
+
+stocks_subset %>%
   ggplot(aes(x = MSFT.Open, y = AAPL.Open)) +
   geom_point() + 
   labs(x = "MSFT Open", y = "AAPL Open", title = "Open prices of MSFT and AAPL January 2020") +
@@ -108,8 +110,7 @@ Residuals are dependent on the line we draw. Visually, here is a model of the da
 
 # day11 = c(164.35, 78.4) # data point
 
-stocks %>%
-  slice(1:20) %>%
+stocks_subset %>%
   ggplot(aes(x = MSFT.Open, y = AAPL.Open)) +
   geom_point() + 
   labs(x = "MSFT Open", y = "AAPL Open", title = "Open prices of MSFT and AAPL January 2020") +
@@ -129,8 +130,7 @@ xPoints = stocks$MSFT.Open[1:20]
 yPoints = stocks$AAPL.Open[1:20]
 yHat = predictAAPL(xPoints)
 
-stocks %>%
-  slice(1:20) %>%
+stocks_subset %>%
   ggplot(aes(x = MSFT.Open, y = AAPL.Open)) +
   geom_point() + 
   labs(x = "MSFT Open", y = "AAPL Open", title = "Open prices of MSFT and AAPL January 2020") +
@@ -212,8 +212,96 @@ To **fit the model** in R, i.e. to "find $\hat{\beta}$", use the code below as a
 
 ```
 modelFit = linear_reg() %>%
-  
+  set_engine("lm") %>%
+  fit(y-variable-here ~ x-variable-here, data = data-frame-here)
 ```
 
+- `linear_reg` tells `R` we will perform linear regression
+- `set_engine` tells `R` to use the standard linear modeling (lm) machinery
+- `fit` defines the outcome $y$, predictor $x$ and the data set
+
+Running the code above, but replacing the arguments of the `fit` command appropriately will create a new object called "modelFit" (defined on the first line) that stores all information about your fitted model.
+
+To access the information, you can run, e.g.
+
+```
+tidy(modelFit)
+```
+
+Let's try it out.
+
+#### Exercise 6
+
+Find the OLS fitted linear model $y = \hat{\beta_0} + \hat{\beta_1} x$ for January 2020, where $x$ is Microsoft's opening price and $y$ is Apple's opening price. Print your results to the screen
+
+```{r fit-MSFT-AAPL-January}
+# code here
+```
+
+
+#### Exercise 7
+
+Re-write the fitted equation replacing $\beta_0$ and $\beta_1$ with the OLS fitted values.
+
+$$
+\text{[your equation here]}
+$$
+
 ## $R^2$ and checking model fit
+
+### Conceptual introduction
+
+$R^2$, aka "the coefficient of determination" is a way to see how well a given model fits the data. Formally,
+
+$$
+R^2 = 1 - \frac{\sum_i r_i^2}{\sum_i (y_i - \bar{y})^2}
+$$ 
+
+where $\bar{y}$ is the **mean** of all $y$ values.
+
+In words,
+
+$$
+R^2 = 1 - \frac{\text{sum of squared residuals}}{\text{sum of outcome squared distance from the mean}}
+$$
+
+Let's focus on the word version to build intuition.
+
+- The sume of squared residuals is a measure of how wrong our model is (how much our model **doesn't** explain)
+
+- The denominator is proportional to the average square distance from the mean, i.e. the variance, i.e. the amount of variability in the data.
+
+- Together, the fraction represents the proportion of variability that is not explained by the model.
+
+If the sum of squared residuals is $0$, then the model explains all variability and $R^2=1−0=1$.
+
+Similarly if the sum of squared residuals is the same as all the variability in the data, then model does not explain any variability and $R^2=1−1=0$.
+
+Final take-away: $R^2$ is a measure of the proportion of variability the model explains. An $R^2$ of 0 is a poor fit and $R^2$ of 1 is a perfect fit.
+
+### How to find $R^2$
+
+To find $R^2$, simply call the function `glance()` on your `modelFit`, e.g.
+
+```
+glance(modelFit)
+```
+
+#### Exercise 8
+
+Try it!
+
+```{r get-r2-with-glance}
+# code here
+```
+
+Is the coefficient of determination close to 1? Is `MSFT` open price a good predictor of `AAPL` open price in January 2020?
+
+
+## Extra practice
+
+- Plot all the open prices (not just from January 2020 but the entire `stocks` data frame). Add the OLS linear trendline. What do you observe?
+
+- Fit the model on the full data set. Write down the fitted model and $R^2$. Is MSFT a better or worse predictor AAPL stock price when you consider the full dataset? Why?
+
 

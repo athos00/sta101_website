@@ -431,8 +431,10 @@ some error.</p>
 <h3>A simple example</h3>
 <p>Let’s examine January 2020 open prices of Microsoft and Apple stocks
 to illustrate some ideas.</p>
-<pre class="r"><code>stocks %&gt;%
-  slice(1:20) %&gt;%
+<pre class="r"><code>stocks_subset = stocks %&gt;%
+  slice(1:20)
+
+stocks_subset %&gt;%
   ggplot(aes(x = MSFT.Open, y = AAPL.Open)) +
   geom_point() + 
   labs(x = &quot;MSFT Open&quot;, y = &quot;AAPL Open&quot;, title = &quot;Open prices of MSFT and AAPL January 2020&quot;) +
@@ -494,8 +496,7 @@ xPoints = stocks$MSFT.Open[1:20]
 yPoints = stocks$AAPL.Open[1:20]
 yHat = predictAAPL(xPoints)
 
-stocks %&gt;%
-  slice(1:20) %&gt;%
+stocks_subset %&gt;%
   ggplot(aes(x = MSFT.Open, y = AAPL.Open)) +
   geom_point() + 
   labs(x = &quot;MSFT Open&quot;, y = &quot;AAPL Open&quot;, title = &quot;Open prices of MSFT and AAPL January 2020&quot;) +
@@ -549,8 +550,8 @@ model</strong> from exercise 1.</p>
 </div>
 <div id="plotting-the-ols-regression-line" class="section level2">
 <h2>Plotting the OLS regression line</h2>
-<p>Plotting the OLS regression line, that is the line that minimizes the
-sum of square residuals is very easy with ggplot. Simply add</p>
+<p>Plotting the OLS regression line, that is, the line that minimizes
+the sum of square residuals is very easy with ggplot. Simply add</p>
 <pre><code>geom_smooth(method = &#39;lm&#39;, se = F)</code></pre>
 <p>to your plot.</p>
 <p><code>method = lm</code> says to draw a line according to a “linear
@@ -568,9 +569,102 @@ close your line is.</p>
 </div>
 <div id="finding-hatbeta" class="section level2">
 <h2>Finding <span class="math inline">\(\hat{\beta}\)</span></h2>
+<p>To <strong>fit the model</strong> in R, i.e. to “find <span class="math inline">\(\hat{\beta}\)</span>”, use the code below as a
+template:</p>
+<pre><code>modelFit = linear_reg() %&gt;%
+  set_engine(&quot;lm&quot;) %&gt;%
+  fit(y-variable-here ~ x-variable-here, data = data-frame-here)</code></pre>
+<ul>
+<li><code>linear_reg</code> tells <code>R</code> we will perform linear
+regression</li>
+<li><code>set_engine</code> tells <code>R</code> to use the standard
+linear modeling (lm) machinery</li>
+<li><code>fit</code> defines the outcome <span class="math inline">\(y\)</span>, predictor <span class="math inline">\(x\)</span> and the data set</li>
+</ul>
+<p>Running the code above, but replacing the arguments of the
+<code>fit</code> command appropriately will create a new object called
+“modelFit” (defined on the first line) that stores all information about
+your fitted model.</p>
+<p>To access the information, you can run, e.g.</p>
+<pre><code>tidy(modelFit)</code></pre>
+<p>Let’s try it out.</p>
+<div id="exercise-6" class="section level4">
+<h4>Exercise 6</h4>
+<p>Find the OLS fitted linear model <span class="math inline">\(y =
+\hat{\beta_0} + \hat{\beta_1} x\)</span> for January 2020, where <span class="math inline">\(x\)</span> is Microsoft’s opening price and <span class="math inline">\(y\)</span> is Apple’s opening price. Print your
+results to the screen</p>
+<pre class="r"><code># code here</code></pre>
+</div>
+<div id="exercise-7" class="section level4">
+<h4>Exercise 7</h4>
+<p>Re-write the fitted equation replacing <span class="math inline">\(\beta_0\)</span> and <span class="math inline">\(\beta_1\)</span> with the OLS fitted values.</p>
+<p><span class="math display">\[
+\text{[your equation here]}
+\]</span></p>
+</div>
 </div>
 <div id="r2-and-checking-model-fit" class="section level2">
-<h2>$R^2 and checking model fit</h2>
+<h2><span class="math inline">\(R^2\)</span> and checking model fit</h2>
+<div id="conceptual-introduction" class="section level3">
+<h3>Conceptual introduction</h3>
+<p><span class="math inline">\(R^2\)</span>, aka “the coefficient of
+determination” is a way to see how well a given model fits the data.
+Formally,</p>
+<p><span class="math display">\[
+R^2 = 1 - \frac{\sum_i r_i^2}{\sum_i (y_i - \bar{y})^2}
+\]</span></p>
+<p>where <span class="math inline">\(\bar{y}\)</span> is the
+<strong>mean</strong> of all <span class="math inline">\(y\)</span>
+values.</p>
+<p>In words,</p>
+<p><span class="math display">\[
+R^2 = 1 - \frac{\text{sum of squared residuals}}{\text{sum of outcome
+squared distance from the mean}}
+\]</span></p>
+<p>Let’s focus on the word version to build intuition.</p>
+<ul>
+<li><p>The sume of squared residuals is a measure of how wrong our model
+is (how much our model <strong>doesn’t</strong> explain)</p></li>
+<li><p>The denominator is proportional to the average square distance
+from the mean, i.e. the variance, i.e. the amount of variability in the
+data.</p></li>
+<li><p>Together, the fraction represents the proportion of variability
+that is not explained by the model.</p></li>
+</ul>
+<p>If the sum of squared residuals is <span class="math inline">\(0\)</span>, then the model explains all
+variability and <span class="math inline">\(R^2=1−0=1\)</span>.</p>
+<p>Similarly if the sum of squared residuals is the same as all the
+variability in the data, then model does not explain any variability and
+<span class="math inline">\(R^2=1−1=0\)</span>.</p>
+<p>Final take-away: <span class="math inline">\(R^2\)</span> is a
+measure of the proportion of variability the model explains. An <span class="math inline">\(R^2\)</span> of 0 is a poor fit and <span class="math inline">\(R^2\)</span> of 1 is a perfect fit.</p>
+</div>
+<div id="how-to-find-r2" class="section level3">
+<h3>How to find <span class="math inline">\(R^2\)</span></h3>
+<p>To find <span class="math inline">\(R^2\)</span>, simply call the
+function <code>glance()</code> on your <code>modelFit</code>, e.g.</p>
+<pre><code>glance(modelFit)</code></pre>
+<div id="exercise-8" class="section level4">
+<h4>Exercise 8</h4>
+<p>Try it!</p>
+<pre class="r"><code># code here</code></pre>
+<p>Is the coefficient of determination close to 1? Is <code>MSFT</code>
+open price a good predictor of <code>AAPL</code> open price in January
+2020?</p>
+</div>
+</div>
+</div>
+<div id="extra-practice" class="section level2">
+<h2>Extra practice</h2>
+<ul>
+<li><p>Plot all the open prices (not just from January 2020 but the
+entire <code>stocks</code> data frame). Add the OLS linear trendline.
+What do you observe?</p></li>
+<li><p>Fit the model on the full data set. Write down the fitted model
+and <span class="math inline">\(R^2\)</span>. Is MSFT a better or worse
+predictor AAPL stock price when you consider the full dataset?
+Why?</p></li>
+</ul>
 </div>
 
 
