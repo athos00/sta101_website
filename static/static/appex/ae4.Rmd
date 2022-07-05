@@ -181,7 +181,7 @@ How far off is your model (from exercise 1) from the actual observed data on Jan
 
 ## Plotting the OLS regression line
 
-Plotting the OLS regression line, that is the line that minimizes the sum of square residuals is very easy with ggplot. Simply add 
+Plotting the OLS regression line, that is, the line that minimizes the sum of square residuals is very easy with ggplot. Simply add 
 
 ```
 geom_smooth(method = 'lm', se = F)
@@ -208,7 +208,7 @@ Copy your code from exercise 1 below. Add `geom_smooth()` as described above wit
 
 ## Finding $\hat{\beta}$
 
-To **fit the model** in R, i.e. to "find $\hat{\beta}$, use the code below as a template:
+To **fit the model** in R, i.e. to "find $\hat{\beta}$", use the code below as a template:
 
 ```
 modelFit = linear_reg() %>%

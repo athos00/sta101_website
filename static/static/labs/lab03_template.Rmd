@@ -15,7 +15,7 @@ library(tidyverse)
 # Load data
 
 ```{r load-data}
-# code here
+ipf = read_csv("https://sta101.github.io/static/labs/data/ipf_lifts.csv")
 ```
 
 
