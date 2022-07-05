@@ -21,6 +21,9 @@ library(tidyverse)
 
 # Exercise 1
 
+```{r ex-1}
+
+```
 
 # Exercise 2
 
@@ -30,3 +33,49 @@ library(tidyverse)
 
 # Exercise 3
 
+# Exercise 4
+
+```{r ex-4}
+
+```
+
+# Exercise 5
+
+```{r ex-5}
+
+```
+
+# Exercise 6
+
+```{r ex-6}
+
+```
+
+# Exercise 7
+
+```{r ex-7}
+
+```
+# Exercise 8
+
+```{r ex-8}
+
+```
+
+# Exercise 9
+
+```{r ex-9}
+
+```
+
+# Exercise 10 
+
+```{r ex-10}
+
+```
+
+# Exercise 11
+
+```{r ex-11}
+
+```

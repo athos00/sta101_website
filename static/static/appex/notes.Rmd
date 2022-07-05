@@ -1,0 +1,59 @@
+---
+title: "Untitled"
+output: html_document
+date: '2022-06-30'
+---
+
+```{r}
+library(tidyverse)
+library(knitr)
+```
+
+## Notes
+
+```{r likelihood-1}
+p = seq(0,1,0.001)
+likelihood = dbinom(53, 78, p)
+df = data.frame(p, likelihood)
+
+df %>%
+  ggplot(aes(x = p, y = likelihood)) +
+  geom_point() + 
+  geom_vline(xintercept = 0.6794872)
+```
+
+```{r OLS-objective}
+courage %>%
+  mutate(home = ifelse(home_team == "NC", "home", "away"),
+         result2 = ifelse(result == "win", "win", "not_win")) %>%
+   count(result2, home) %>%
+  kable()
+
+away_win = 22
+home_win = 31
+away_not_win = 14
+home_not_win = 11
+
+home_total = home_win + home_not_win
+away_total = away_win + away_not_win
+
+likelihood2 = function(p, q) {
+  return(
+    dnorm(home_win, home_total, p) * dnorm(away_win, away_total, q)
+  )
+}
+
+p = seq(0,1,0.1)
+q = p
+p = rep(p, each = length(p))
+q = rep(q, length(q))
+
+likelihood = likelihood2(p,q)
+
+df = data.frame(p, q, likelihood)
+
+df %>%
+ggplot(aes(x = p, y = q, fill = likelihood)) +
+  geom_tile()
+```
+
