@@ -34,13 +34,13 @@ destfile = "ae4.rmd")
 
 ```{r load-libraroies, warning = F, message = F}
 library(tidyverse)
-library(knitr)
+library(tidymodels)
 ```
 
 Today's data is Apple and Microsoft stock prices from January 1st 2020 to December 31st 2021. I pulled this data off the Yahoo finance using their API via the `tidyquant` package July 2022.
 
 ```{r load-data, warning = F, message = F}
-stocks = read_csv("~/Desktop/teaching/sta101/static/static/appex/data/stocks1.csv")
+stocks = read_csv("https://sta101.github.io/static/appex/data/stocks1.csv")
 ```
 
 ## Notes
@@ -67,7 +67,7 @@ Let's examine January 2020 open prices of Microsoft and Apple stocks to illustra
 
 ```{r simple-example}
 stocks_subset = stocks %>%
-  slice(1:20)
+  slice(1:21)
 
 stocks_subset %>%
   ggplot(aes(x = MSFT.Open, y = AAPL.Open)) +
@@ -133,8 +133,8 @@ predictAAPL = function(x) {
   return(-5 + (0.5*x))
 }
 
-xPoints = stocks$MSFT.Open[1:20]
-yPoints = stocks$AAPL.Open[1:20]
+xPoints = stocks$MSFT.Open[1:21]
+yPoints = stocks$AAPL.Open[1:21]
 yHat = predictAAPL(xPoints)
 
 stocks_subset %>%
@@ -274,7 +274,7 @@ $$
 
 Let's focus on the word version to build intuition.
 
-- The sume of squared residuals is a measure of how wrong our model is (how much our model **doesn't** explain)
+- The sum  of squared residuals is a measure of how wrong our model is (how much our model **doesn't** explain)
 
 - The denominator is proportional to the average square distance from the mean, i.e. the variance, i.e. the amount of variability in the data.
 
