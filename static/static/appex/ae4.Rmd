@@ -23,6 +23,13 @@ By the end of today you will...
 
 ## Getting started
 
+Download this application exercise by pasting the code below into your **console** (bottom left of screen)
+
+```
+download.file("https://sta101.github.io/static/appex/ae4.Rmd",
+destfile = "ae4.rmd")
+```
+
 ## Load packages and data
 
 ```{r load-libraroies, warning = F, message = F}
