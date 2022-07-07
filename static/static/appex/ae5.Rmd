@@ -38,8 +38,7 @@ library(scatterplot3d)
 Today's data is a collection of tech stock prices from January 1st 2020 to December 31st 2021. I pulled this data off Yahoo finance using their API via the `tidyquant` package July 2022.
 
 ```{r load-data, warning = F, message = F}
-# stocks = read_csv("https://sta101.github.io/static/appex/data/stocks2.csv")
-stocks = read_csv("~/Desktop/teaching/sta101/static/static/appex/data/stocks2.csv")
+stocks = read_csv("https://sta101.github.io/static/appex/data/stocks2.csv")
 ```
 ## Recap (warmup)
 
