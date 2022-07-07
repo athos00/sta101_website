@@ -57,7 +57,7 @@ Find all assignments and due dates here. This schedule updates frequently.
 |     |Thu Jun 30 |  Exploratory data analysis II       | [`r emo::ji("book")`](/prepare/week-1)        | [ae3](/static/appex/ae3.html) | [lab 2](/static/labs/lab02.html)             |     |        |
 |  2   |Mon Jul 04 |NO CLASS: Independence Day |        |   |           |     |        |
 |     |Tue Jul 05 | Simple regression        | [`r emo::ji("book")`](/prepare/week-2)    | [ae4](/static/appex/ae4.html) | [lab 3](/static/labs/lab03.html)            |     |        |
-|     |Thu Jul 07 | Multiple regression I       | [`r emo::ji("book")`](/prepare/week-2)       | | No lab: exam released           |  [exam 1]()   |        |
+|     |Thu Jul 07 | Multiple regression I       | [`r emo::ji("book")`](/prepare/week-2)       | [ae5](/static/appex/ae5.html) | No lab: exam released           |  [exam 1](/static/exams/exam01.html)   |        |
 |  3   |Mon Jul 11 | Multiple regression II       |        |   |           |  exam 1 due   |        |
 |     |Tue Jul 12 | Logistic regression         |        | |  Regression project: workday         |     |        |
 |     |Thu Jul 14 | Random variables + distributions      |        | | [lab 4]()              |     |        |
