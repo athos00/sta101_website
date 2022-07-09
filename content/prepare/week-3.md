@@ -4,18 +4,17 @@ title: Prepare week 3
 
 To complete by the beginning of class on the specified day:
 
-## Monday July 4 
+## Monday July 11
 
-- Watch []()
+- Watch [More models with multiple predictors](https://www.youtube.com/watch?v=nJAYRnLPb10)
 
 
-## Tuesday July 5
+## Tuesday July 12
 
-- Watch [The language of models](https://www.youtube.com/watch?v=MWkkvDopBKc)
-- Watch [Fitting and interpreting models](https://www.youtube.com/watch?v=69U92Q3pwnA)
-- Read (optional): [chapter 7: linear regression with a single predictor](https://openintro-ims.netlify.app/index.html)
+- Watch [Logistic regression](https://www.youtube.com/watch?v=AidXFYSYfJg)
+- Watch [stringR](https://warpwire.duke.edu/w/Lw4GAA/)
+- Read (optional): [chapter 9: logistic regression](https://openintro-ims.netlify.app/index.html)
 
-## Thursday July 7
+## Thursday July 14
 
-- 
-- Read (optional): [chapter 8: linear regression with multiple predictors](https://openintro-ims.netlify.app/index.html)
+- No preparation required
