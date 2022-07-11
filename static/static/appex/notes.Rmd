@@ -57,3 +57,61 @@ ggplot(aes(x = p, y = q, fill = likelihood)) +
   geom_tile()
 ```
 
+
+
+Today's data comes from the Flint, Michigan water crisis. See [The murky tale of Flint's deceptive water data](https://rss.onlinelibrary.wiley.com/doi/full/10.1111/j.1740-9713.2017.01016.x) for further reading. A quote from the article: "This is a cautionary tale of how flawed and inadequate testing creates misleading data".
+
+```{r load-data, warning = F, message = F}
+flint = read_csv("~/Desktop/teaching/sta101/static/static/appex/data/flint.csv")
+```
+
+### Codebook
+
+- **id**: sample ID number
+- **zip**: ZIP code in Flint of the sample's location
+- **ward**: ward in Flint of the sample's location
+- **draw**: which time point the water was sampled from
+- **lead**: lead content in parts per billion
+
+## Notes
+
+
+### Poor water testing
+
+```{r first-look-at-data, echo = F}
+flint %>%
+  filter(draw == "third") %>%
+  group_by(zip) %>%
+  summarize(mean(lead))
+```
+
+
+```{r}
+flint %>%
+  ggplot(aes(x = id, y = lead, color = draw)) +
+  geom_point() +
+  geom_smooth(method = 'lm') +
+  ylim(c(0,50))
+```
+
+
+### Main effects model
+
+$$
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \epsilon
+$$
+
+### Interactive effects model
+
+$$
+y = \beta_0 + \beta_1 x_1 + \beta_2 x_2 + \beta_3 x_1 x_2 + \epsilon
+$$
+
+```{r flint-1}
+flint3 %>%
+  filter(Lead_ppb <= 10) %>%
+  filter(SampleLocation %in% c("BATHROOM", "KITCHEN")) %>%
+  ggplot(aes(x = SampleNumber, y = Lead_ppb, color = SampleLocation)) +
+  geom_point()+
+  geom_smooth(method = 'lm')
+```
