@@ -4,6 +4,8 @@ title: STA 101 Regression Project
 
 This regression project is **due Tuesday July 19 at 11:59pm.**
 
+View [team assignments here](https://duke.box.com/s/06n8tniiuroqg2ms0nkrbz79zsq73gpk)
+
 The deliverable for this project (what you will turn in) is a written report. See below for more details.
 
 
