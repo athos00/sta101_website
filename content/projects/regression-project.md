@@ -19,8 +19,25 @@ Download the data using the code below.
 births = read_csv("https://sta101.github.io/static/appex/data/trainUSbirth.csv")
 ```
 
-Here's a codebook for the data set:
+Here's a code book for the data set:
 
+
+- `newborn_birth_weight`: newborn birth weight in grams (response)
+- `month`: birth month (1 = January, …, 12 = December)
+- `mother_age`: age of the mother in years
+- `prenatal_care_starting_month`: month in which prenatal care began; if 0, there was no prenatal care
+- `daily_cigarette_prepregnancy`: daily number of cigarettes smoked before the pregnancy
+- `daily_cigarette_trimester_1`: daily number of cigarettes smoked during the 1st trimester of the pregnancy
+- `daily_cigarette_trimester_2`: daily number of cigarettes smoked during the 2nd trimester of the pregnancy
+- `daily_cigarette_trimester_3`: daily number of cigarettes smoked during the 3rd trimester of the pregnancy
+- `mother_height`: height of the mother in inches
+- `mother_bmi`: body mass index of the mother
+- `mother_weight_prepregnancy`: weight of the mother before the pregnancy in pounds
+- `mother_weight_delivery`: weight of the mother at delivery in pounds
+- `mother_diabetes_gestational`: whether the mother had diabetes during the pregnancy
+- `newborn_sex`: sex of the newborn
+- `gestation_week`: number of gestational weeks
+- `mother_risk_factors`: whether the mother had any risk factor (diabetes, hypertension, previous preterm birth, previous cesarean, infertility treatment used, etc)
 
 
 
@@ -53,14 +70,14 @@ predict_test %>%
 
 ```
 
-See [ae7]() for an example of how to do this in a logistic regression setting.
+See [ae7](https://sta101.github.io/static/appex/ae7.html) for an example of how to do this in a logistic regression setting.
 
 ## Written report
 
 Your report must be written using R Markdown. Your written report should not exceed five pages inclusive of all tables and figures. Use the code below to download a template file for the project.
 
 ```
-download.file("https://sta101.github.io/static/projects/regressionProject.Rmd",
+download.file("https://sta101.github.io/static/projects/regression_project_template.Rmd",
 destfile = "regressionProject.rmd")
 ```
 
@@ -76,7 +93,7 @@ author: "The Last Rbenders: Aang, Katara, Sokka, Momo"
 All team members must contribute to the report. Before you finalize your report, make sure the printing of code chunks is turned off by including the following code chunk at the top of your RMD:
 
     ```{r setup, include=FALSE}
-        knitr::opts_chunk$set(echo = TRUE)
+        knitr::opts_chunk$set(echo = FALSE)
     ```
 
 
