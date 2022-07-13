@@ -70,7 +70,7 @@ predict_test %>%
 
 ```
 
-See [ae7](https://sta101.github.io/static/appex/ae7.html) for an example of how to do this in a logistic regression setting.
+See [ae7]() for an example of how to do this in a logistic regression setting.
 
 ## Written report
 
