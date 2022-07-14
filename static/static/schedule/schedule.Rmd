@@ -62,11 +62,11 @@ Find all assignments and due dates here. This schedule updates frequently.
 |  3   |Mon Jul 11 | Multiple regression II       | [`r emo::ji("book")`](/prepare/week-3)   | [ae6](/static/appex/ae6.html)   |           |  exam 1 due   |        |
 |     |Tue Jul 12 | Logistic regression         | [`r emo::ji("book")`](/prepare/week-3)   | [ae7](/static/appex/ae7.html)  |  Regression project: workday         |      |  [Regression project](/projects/regression-project)      |
 |     |Thu Jul 14 | Random variables + distributions      | [`r emo::ji("book")`](/prepare/week-3) | [ae8](/static/appex/ae8.html) | [lab 4](/static/labs/lab04.html)              |     |        |
-|  4   |Mon Jul 18 | Simulation-based inference I         |        |   |           |     |        |
-|     |Tue Jul 19 | Simulation-based inference II       |        |  | Lab cancelled: work on project              |     |        |
-|     |Thu Jul 21 | Hypothesis testing I        |        | | No lab: exam released             |  [exam 2]()   |        |
+|  4   |Mon Jul 18 | Sampling and the bootstrap        | [`r emo::ji("book")`](/prepare/week-4)       |   |           |     |        |
+|     |Tue Jul 19 | Central limit theorem (CLT)    | [`r emo::ji("book")`](/prepare/week-4)       |  | Lab cancelled: work on project              |     |        |
+|     |Thu Jul 21 | Hypothesis testing I        |  [`r emo::ji("book")`](/prepare/week-4)      | | No lab: exam released             |  [exam 2]()   |        |
 |  5   |Mon Jul 25 | Hypothesis testing II        |        |   |           |  exam 2 due    |     |
-|     |Tue Jul 26 | Central limit theorem (CLT)      |        | | [lab 5]()              |     |        |
+|     |Tue Jul 26 | Hypothesis testing III      |        | | [lab 5]()              |     |        |
 |     |Thu Jul 28 | Regression + inference       |        |  | [lab 6]()             |     |        |
 |  6   |Mon Aug 01 | Data science ethics         |        |   |           |     |        |
 |     |Tue Aug 02 | Special topic: xaringan       |        | | Final project: peer-review           |     |        |
