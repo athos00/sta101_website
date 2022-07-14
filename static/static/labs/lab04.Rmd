@@ -73,10 +73,6 @@ Big hint: create a group of individuals to be in your test data frame, e.g. `kee
 
 6. Fit a main effects logistic regression model that predicts prob(PD) status from `HNR`, `PPE`, `jitter` and `shimmer`. Print your model `tidy`.
 
-```{r ex-6}
-
-```
-
 
 7. Edit the code chunk below, specifically renaming `model_fit` and `test_data` where appropriate. Un-comment and run to find the predicted probabilities of Parkinson's disease in the test data frame.
 
