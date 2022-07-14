@@ -53,7 +53,7 @@ We separate each outcome by a comma and use brackets $\{ \}$ to denote a "set".
 
 - Experiment 4: You send out a survey asking participants whether they prefer cats or dogs. The sample space is $\{ \text{Cats}, \text{Dogs} \}$
 
-- Experiment 5: A car manufacturer makes 100 vehicles. You count the number of recalls. The sample space is $\{1, 2, 3, \ldots, 99, 100 \}$
+- Experiment 5: A car manufacturer makes 100 vehicles. You count the number of recalls. The sample space is $\{0, 1, 2, 3, \ldots, 99, 100 \}$
 
 #### Continuous examples
 
@@ -73,9 +73,9 @@ An **event** is a collection of 1 or more outcomes. Two events are said to be **
 
 - You roll a die once. Let *A* be the event that you roll an even number, i.e. *A* $= \{2, 4, 6 \}$. Let *B* be the event you roll a 1 or a 2, i.e. *B* $= \{1, 2 \}$. *A* and *B* are **not** disjoint.
 
-- A car manufacturer makes 100 vehicles. You count the number of recalls. Let *C* be the event you see fewer than 10 recalls. *C* $= \{1, 2, 3, \ldots, 8, 9 \}$
+- A car manufacturer makes 100 vehicles. You count the number of recalls. Let *C* be the event you see fewer than 10 recalls. *C* $= \{0, 1, 2, 3, \ldots, 8, 9 \}$
 
-- You observe the numeric grade you earn in a course. Let *D* be the event you receive a letter grade of "A". *E* $= [93, 100]$. Let *D* be the event that you earn a "B" or worse. *D* and *E* **are disjoint** events.
+- You observe the numeric grade you earn in a course. Let *D* be the event you receive a letter grade of "A". *D* $= [93, 100]$. Let *E* be the event that you earn a "B" or worse. *E* $= [0, 87)$. *D* and *E* **are disjoint** events because they cannot occur simultaneously.
 
 
 ### Probability
@@ -146,6 +146,12 @@ You toss a fair coin 10 times. Let *A* be the event there is at least one head.
 
 What is the probability of *A*?
 
+`rbinom()` arguments:
+
+- size is the number of trials, aka the number of coin flips in 1 experiment
+- prob is the probability of a success
+- n defines how many times to repeat the entire experiment
+
 ```{r coin-1}
 
 N = 100
@@ -196,7 +202,7 @@ set.seed(1)
 numberOfPeople = 10 
 numberOfSurveys = 1
 probOfSuccess = 17 / 20
-rbinom(n = numberOfPeople, size = numberOfSurveys, prob = probOfSuccess)
+rbinom(n = numberOfSurveys, size = numberOfPeople, prob = probOfSuccess)
 ```
 
 
