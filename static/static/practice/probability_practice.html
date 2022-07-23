@@ -522,6 +522,7 @@ exercises.</p>
               destfile = &quot;probability_practice.rmd&quot;)</code></pre>
 <p><strong>Libraries</strong></p>
 <pre class="r"><code>library(tidyverse)
+library(tidymodels)
 library(openintro)</code></pre>
 <p><strong>Data</strong></p>
 <p>Use the code below to load the data sets into R. This data is on
@@ -542,10 +543,11 @@ and eat the entire item, what is the probability you ingest more than
 calories eating 1 item off the menu. Let <em>B</em> be the event an
 individual orders from Chick Fil-A. What can you say about events
 <em>A</em> and <em>B</em>?</p></li>
-<li><p>Let <em>A</em> be the event an individual orders from Dairy
-Queen. Let <em>B</em> be the event that the individual ordered and
-consumed 1 item that contained more than 6 grams of sugar. Is event
-<em>B</em> independent of <em>A</em>?</p></li>
+<li><p>Let <em>A</em> be the event that an individual ordered and
+consumed 1 fast food item from a fast food restaurant that contained
+more than 6 grams of sugar. Let <em>B</em> be the event an individual
+orders from Dairy Queen. Is event <em>A</em> independent of
+<em>B</em>?</p></li>
 <li><p>You randomly sample 12 items from the Subway menu using the code
 below.</p></li>
 </ol>
@@ -577,10 +579,16 @@ subwaySample</code></pre>
 <li><p>Compute the mean cholesterol from your sample, together with a
 90% confidence interval. Interpret the confidence interval.</p></li>
 <li><p>Next compute the true mean using all the subway menu items in the
-<code>fastfood</code> data frame. Does your confidence interval capture
-the true mean? Use <code>set.seed(4)</code> when creating your bootstrap
+<code>fastfood</code> data frame. Assuming <code>fastfood</code>
+contains every single item on the Subway menu, does your confidence
+interval capture the <strong>true</strong> mean? Use
+<code>set.seed(4)</code> when creating your bootstrap
 distribution.</p></li>
 </ul>
+<ol start="5" style="list-style-type: decimal">
+<li>Could you use Central Limit theorem to construct a confidence
+interval in exercise 4? Why or why not?</li>
+</ol>
 </div>
 
 

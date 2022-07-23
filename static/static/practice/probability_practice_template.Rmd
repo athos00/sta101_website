@@ -1,5 +1,5 @@
 ---
-title: "EDA Practice Template"
+title: "Probability Practice Template"
 output: html_document
 ---
 
@@ -8,6 +8,7 @@ output: html_document
 ```{r load-library, message = F, warning = F}
 library(tidyverse)
 library(openintro)
+library(tidymodels)
 ```
 
 ```{r load-data, message = F, warning = F}
@@ -46,6 +47,12 @@ subwaySample
 ```
 
 ```{r ex-4-2}
+# code here
+```
+
+## Exercise 5
+
+```{r ex-5}
 # code here
 ```
 

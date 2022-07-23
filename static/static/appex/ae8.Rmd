@@ -1,7 +1,7 @@
 ---
 title: "Random variables, probabilities and distributions"
 output: html_document
-date: '2022-07-12'
+date: "July 14, 2022"
 ---
 
 ## Bulletin
@@ -97,6 +97,7 @@ Let *A* and *B* be two events.
 - Conditional probability: The probability an event occurs given the other has occurred
   - P(*A*|*B*) or P(*B*|*A*)
   - Example: What is the probability a student is an airbender given they favor dogs?
+  - P(*A*|*B*) = P(*A* and *B*) / P(*B*)
 - Independent events: Knowing one event has occurred does not lead to any change in the probability we assign to another event.
   - P(*A*| *B*) = P(*A*) or P(*B*|*A*) = P(*B*)
   - Example: P(Airbender | dogs) = P(Airbender)

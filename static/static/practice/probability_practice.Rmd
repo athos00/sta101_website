@@ -23,6 +23,7 @@ download.file("https://sta101.github.io/static/practice/probability_practice_tem
 
 ```{r load-library, warning = F, message = F}
 library(tidyverse)
+library(tidymodels)
 library(openintro)
 ```
 
@@ -55,7 +56,7 @@ fastfood %>%
 # the two events are disjoint
 ```
 
-3. Let *A* be the event an individual orders from Dairy Queen. Let *B* be the event that the individual ordered and consumed 1 item that contained more than 6 grams of sugar. Is event *B* independent of *A*?
+3. Let *A* be the event that an individual ordered and consumed 1 fast food item from a fast food restaurant that contained more than 6 grams of sugar. Let *B* be the event an individual orders from Dairy Queen. Is event *A* independent of *B*?
 
 ```{r, echo = F, eval = F}
 fastfood %>%
@@ -83,7 +84,7 @@ subwaySample
 
 - Compute the mean cholesterol from your sample, together with a 90% confidence interval. Interpret the confidence interval.
 
-- Next compute the true mean using all the subway menu items in the `fastfood` data frame. Does your confidence interval capture the true mean? Use `set.seed(4)` when creating your bootstrap distribution.
+- Next compute the true mean using all the subway menu items in the `fastfood` data frame. Assuming `fastfood` contains every single item on the Subway menu, does your confidence interval capture the **true** mean? Use `set.seed(4)` when creating your bootstrap distribution.
 
 ```{r eval = F, echo = F}
 set.seed(4)
@@ -100,3 +101,7 @@ fastfood %>%
   filter(restaurant == "Subway") %>%
   summarize(meanCholesterol = mean(cholesterol))
 ```
+
+5. Could you use Central Limit theorem to construct a confidence interval in exercise 4? Why or why not?
+
+
