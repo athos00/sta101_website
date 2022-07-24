@@ -66,7 +66,7 @@ Find all assignments and due dates here. This schedule updates frequently.
 |     |Tue Jul 19 | Central limit theorem (CLT)    | [`r emo::ji("book")`](/prepare/week-4)       | [ae10](/static/appex/ae10.html) | Lab cancelled: work on project              |     |        |
 |     |Thu Jul 21 | Hypothesis testing I        |  [`r emo::ji("book")`](/prepare/week-4)      | [ae11](/static/appex/ae11.html) | No lab: exam released             |  [exam 2](/static/exams/exam02.html)   |        |
 |  5   |Mon Jul 25 | Hypothesis testing II        | [`r emo::ji("book")`](/prepare/week-5)        |   |           |  exam 2 due    |     |
-|     |Tue Jul 26 | Hypothesis testing III      | [`r emo::ji("book")`](/prepare/week-5)        | | [lab 5]()              |     |        |
+|     |Tue Jul 26 | Hypothesis testing III      | [`r emo::ji("book")`](/prepare/week-5)        | | [lab 5](/static/labs/lab05.html)              |     |        |
 |     |Thu Jul 28 | Regression + inference       |  [`r emo::ji("book")`](/prepare/week-5)       |  | [lab 6]()             |     |        |
 |  6   |Mon Aug 01 | Data science ethics         |        |   |           |     |        |
 |     |Tue Aug 02 | Special topic: xaringan       |        | | Final project: peer-review           |     |        |
