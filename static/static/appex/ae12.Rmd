@@ -8,7 +8,7 @@ date: "July 25, 2022"
 ## Bulletin
 
 - Exam 2 due tonight at 11:59pm
-
+- [Final project](/projects/finalProject)
 ## Today
 
 By the end of today you will...
@@ -67,10 +67,7 @@ We compared the p-value to some pre-defined cutoff, $\alpha$. In our example we 
 
 
 ```{r load-flips}
-# coin flip data
-# coin_flips = data.frame(one_flip = c(rep("H", 20), rep("T", 10)))
-# coin_flips$one_flip = sample(coin_flips$one_flip, size = 30, replace = FALSE)
-coin_flips = read_csv("~/Desktop/coin_flips.csv")
+coin_flips = read_csv("https://sta101.github.io/static/appex/data/coin_flips.csv")
 ```
 
 
@@ -244,5 +241,60 @@ Write down the observed statistic. Simulate under the null and compute the p-val
 3. Simulate **under the null** and compute the p-value using the **observed statistic** and the **alternative hypothesis**.
 4. Compare the p-value to your significance level $\alpha$ and reject or fail to reject the null. Interpret your result in context.
 
+## Which training method is better?
+
+Two exercise regimes:
+
+- "density" training
+- "grease-the-groove" (gtg)
+
+We want to know, is the average pull-up percent increase of a gtg trainee significantly greater than a density trainee?
+
+Fundamentally, does the categorical variable `training` affect the average percentage increase in pull-ups?
+
+**State the null hypothesis**:
+
+$$
+\mu_d = \mu_{gtg}
+$$
+
+$$
+H_0: \mu_d - \mu_{gtg} = 0
+$$
+
+What we want to do to simulate data under this null:
+
+```{r conceptual-permute, results = 'hide'}
+random_training = sample(push_pull$training, replace = FALSE)
+
+push_pull %>%
+  select(pct_pull_inc) %>%
+  mutate(random_training = random_training)
+```
 
 
+
+#### Exercise 9:
+
+- Complete the hypothesis specification above by stating the alternative.
+
+
+```{r}
+sim_num = 10000
+set.seed(1)
+# simulate null
+null_dist = push_pull %>%
+  specify(response = pct_pull_inc, explanatory = training) %>%
+  hypothesize(null = "independence") %>%
+  generate(reps = sim_num, type = "permute") %>%
+  calculate(stat = "diff in means", order = c("gtg", "density"))
+# observed statistic
+obs_stat = .489 - .196
+# visualize / get p
+visualize(null_dist) +
+  shade_p_value(obs_stat, direction = "right")
+```
+
+#### Exercise 10
+
+Compute the p-value and state your conclusion with $\alpha = 0.05$
