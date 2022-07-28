@@ -5,8 +5,8 @@ title: "STA 101 Final Project"
 This final project has three deliverable items:
 
 - a pre-project proposal **due Friday July 29 at 11:59pm**,
-- final report **due Friday August 5 at 11:59pm**,
-- a final presentation **due Thursday August 4 at 11:59pm**
+- a final presentation **due Thursday August 4 at 11:59pm**,
+- final report **due Friday August 5 at 11:59pm**.
 
 In addition to the above, a component of the grade will be peer-reviewing project report drafts during lab in the final week of class and commenting on the presentaitons on August 5th.
 
@@ -17,7 +17,7 @@ View [team assignments here](https://duke.box.com/s/06n8tniiuroqg2ms0nkrbz79zsq7
 
 Find a data set, develop a question you can answer with the data, and do it.
 
-## Proposal
+## Proposal `5pts`
 
 1. Find 2 or 3 data sets of interest. Each data must have a mix of categorical and numeric variables and contain at least 500 observations and 10 variables or **have prior approval by Prof. Fisher**.
 
@@ -53,7 +53,7 @@ Some example resources you might use to find a data set are below. You may not u
 - [World Bank](https://datacatalog.worldbank.org/)
 - [Election Studies](https://electionstudies.org//)
 
-## Written report
+## Written report `50pts`
 
 Your report must be written using R Markdown. Your written report should not exceed ten pages inclusive of all tables and figures. Use the code below to download a template file for the project.
 
@@ -122,8 +122,12 @@ This section is a conclusion and discussion. You should
 
 Your written report should be professionally formatted. This means complete sentences, labeling graphs and figures, turning off code chunks, and using typical style guidelines. The only sections your reportm ay contain are **Introduction**, **Methodology**, **Results** and **Discussion**. You should include a citation of your data set and the citation should be formatted in any style of your choosing (e.g. MLA, APA etc.) It is important that your citations (should you include multiple) be consistent in their formatting.
 
+### Peer review `2.5pts`
 
-## Presentation
+During lab in the final week, you will peer-review draft reports. Details will be announced in lab.
+
+
+## Presentation `40pts`
 
 For your presentation, you and your team must also create presentation slides that summarize and showcase your project. Introduce your research question and data set, showcase visualizations, and provide some conclusions. These slides should serve as a brief visual accompaniment to your write-up and will be graded for content and quality.
 
@@ -185,7 +189,7 @@ You can post the link directly into sakai discussion or alternatively post the p
 
 - You’re done!
 
-**Presentation comments**
+### Presentation comments `2.5pts`
 
 Each student will be assigned 2 presentations to watch.
 

@@ -8,7 +8,8 @@ date: "July 25, 2022"
 ## Bulletin
 
 - Exam 2 due tonight at 11:59pm
-- [Final project](/projects/finalProject)
+- [Final project](/projects/final-project)
+
 ## Today
 
 By the end of today you will...
@@ -41,7 +42,7 @@ library(tidymodels)
 Last time we asked if a coin was fair. We let $p$ be the probability of landing heads. Fundamentally, we were interested in whether or not $p = 0.5$. This was our **null hypothesis**:
 
 $$
-H_0: p = 5
+H_0: p = .5
 $$
 
 and our alternative, was that the coin was biased heads:
@@ -53,7 +54,7 @@ In one example our data consisted of 30 coin flips and 26 heads. The proportion 
 
 Do these 30 coin flips give us enough evidence to reject the null in favor of the alternative?
 
-To answer this question, we computed $Pr(\hat{p} \geq .87 | H_0 \text{ true})$. In words, the probability that our statistic of interest, ($\hat{p}$), is greater than or equal to what we saw given that the null is true.
+To answer this question, we computed the p-value: $Pr(\hat{p} \geq .87 | H_0 \text{ true})$. In words, the probability that our statistic of interest, ($\hat{p}$), is greater than or equal to what we saw given that the null is true.
 
 Notice that the p-value is defined by three things:
 
@@ -89,7 +90,7 @@ null_dist %>%
 get_p_value(obs_stat, direction = "right")
 ```
 
-p-value of $2 \times 10^{-4}$ < 0.05. We reject the null that the coin is fair.
+p-value of $1 \times 10^{-4}$ < 0.05. We reject the null that the coin is fair.
 
 ### Not just a coin flip
 
@@ -150,7 +151,7 @@ Write the null and alternative in mathematical notation.
 
 #### Exercise 3 
 
-What is the observed statistic? Write it in mathematical notation.
+What is the observed statistic? Compute and write it in mathematical notation.
 
 #### Exercise 4 
 
@@ -160,9 +161,9 @@ Next, simulate under the null and compute the p-value. State your conclusion wit
 
 - What if we want to make a claim about a different population parameter than a proportion? Maybe a mean, or median? We can't necessarily flip a coin. The answer, is once again, bootstrap sampling.
 
-**Hypothesis**: "The mean age of push-up/pull-up training partcipants is greater than 30".
+**Hypothesis**: "The mean age of push-up/pull-up training participants is greater than 30".
 
-Let's investigate this hypothesis with a signifiance level $\alpha = 0.01$.
+Let's investigate this hypothesis with a significance level $\alpha = 0.01$.
 
 #### Exercise 5
 
@@ -237,7 +238,7 @@ Write down the observed statistic. Simulate under the null and compute the p-val
 ### Hypothesis testing procedure
 
 1. Specify the null and alternative hypothesis. Choose or know $\alpha$.
-2. Look at the data, compute the observed statistic.
+2. Collect/examine the data. Compute the observed statistic.
 3. Simulate **under the null** and compute the p-value using the **observed statistic** and the **alternative hypothesis**.
 4. Compare the p-value to your significance level $\alpha$ and reject or fail to reject the null. Interpret your result in context.
 
@@ -248,7 +249,7 @@ Two exercise regimes:
 - "density" training
 - "grease-the-groove" (gtg)
 
-We want to know, is the average pull-up percent increase of a gtg trainee significantly greater than a density trainee?
+We want to know, is the average pull-up percent increase of a gtg trainee significantly different than a density trainee?
 
 Fundamentally, does the categorical variable `training` affect the average percentage increase in pull-ups?
 
@@ -276,8 +277,14 @@ push_pull %>%
 
 #### Exercise 9:
 
-- Complete the hypothesis specification above by stating the alternative.
+- Complete the hypothesis specification above by stating the alternative. Check the observed statistic reported below.
 
+```{r}
+# code here
+```
+
+
+Simulating under the null and computing the p-value:
 
 ```{r}
 sim_num = 10000
@@ -287,14 +294,38 @@ null_dist = push_pull %>%
   specify(response = pct_pull_inc, explanatory = training) %>%
   hypothesize(null = "independence") %>%
   generate(reps = sim_num, type = "permute") %>%
-  calculate(stat = "diff in means", order = c("gtg", "density"))
+  calculate(stat = "diff in means", order = c("density", "gtg"))
 # observed statistic
-obs_stat = .489 - .196
+obs_stat = .196 - .489
 # visualize / get p
 visualize(null_dist) +
-  shade_p_value(obs_stat, direction = "right")
+  shade_p_value(obs_stat, direction = "both")
 ```
 
 #### Exercise 10
 
 Compute the p-value and state your conclusion with $\alpha = 0.05$
+
+## Summary of `generate()` options
+
+#### 1. `draw`
+
+- description: flip a coin with probability p, or roll a die with probabilities associated with each side. [See here](https://cran.r-project.org/web/packages/infer/vignettes/observed_stat_examples.html#one-categorical-2-level---gof) for reference to the multinomial setting.
+- typical case: test the proportion of a binary outcome
+- null: proportion $p$ is some fixed number
+- Example (hypothesis test for a single proportion):
+
+#### 2. `bootstrap`
+
+- description: re-sample your data with replacement
+- typical case (in hypothesis testing): does the mean equal a specific value? Does the median equal a specific value?
+- null: what would the data have looked like if nothing but the point estimate changed?
+
+#### 3. `permute`
+
+- description: permutes variables
+- typical case: is there a difference in the outcome between groups?
+- associated null: group membership does not matter i.e. group A and group B have the same outcome
+- Example (test for independence):
+
+
